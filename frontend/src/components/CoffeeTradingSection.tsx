@@ -1,4 +1,4 @@
-import { Coffee, CheckCircle, Star, Globe, Award } from 'lucide-react';
+import { Coffee, CheckCircle, Globe, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
@@ -59,17 +59,33 @@ export default function CoffeeTradingSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 bg-earth-amber/20 border border-earth-amber/30 text-earth-amber px-4 py-1.5 rounded-full text-sm font-sans font-medium mb-4">
+          <div
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-sans font-semibold mb-4 border"
+            style={{
+              backgroundColor: 'oklch(0.72 0.18 75 / 0.22)',
+              borderColor: 'oklch(0.82 0.18 75 / 0.55)',
+              color: 'oklch(0.93 0.16 80)',
+            }}
+          >
             <Coffee className="w-4 h-4" />
             <span>Coffee Trading</span>
           </div>
-          <h2 className="font-serif font-bold text-4xl sm:text-5xl text-earth-cream mb-4">
+          <h2
+            className="font-serif font-bold text-4xl sm:text-5xl mb-4 tracking-tight"
+            style={{ color: 'oklch(0.92 0.18 78)' }}
+          >
             Coffee Trading
           </h2>
-          <p className="font-sans text-earth-cream/70 text-lg max-w-2xl mx-auto">
+          <p
+            className="font-sans text-lg max-w-2xl mx-auto leading-relaxed"
+            style={{ color: 'oklch(0.93 0.04 90)' }}
+          >
             Sourcing and trading the finest Indian coffee varieties — from farm to cup. Connecting growers with buyers across domestic and international markets.
           </p>
-          <div className="mt-6 w-20 h-1 bg-earth-amber mx-auto rounded-full" />
+          <div
+            className="mt-6 w-20 h-1.5 mx-auto rounded-full"
+            style={{ backgroundColor: 'oklch(0.82 0.18 75)' }}
+          />
         </div>
 
         {/* Background accent image */}
@@ -79,81 +95,139 @@ export default function CoffeeTradingSection() {
             alt="Rich roasted coffee beans"
             className="w-full h-48 sm:h-64 object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-coffee-dark/80 to-transparent flex items-center px-8 sm:px-12">
+          <div className="absolute inset-0 bg-gradient-to-r from-coffee-dark/85 to-transparent flex items-center px-8 sm:px-12">
             <div>
-              <h3 className="font-serif font-bold text-2xl sm:text-3xl text-earth-cream mb-2">
+              <h3
+                className="font-serif font-bold text-2xl sm:text-3xl mb-2"
+                style={{ color: 'oklch(0.93 0.18 80)' }}
+              >
                 From Plantation to Cup
               </h3>
-              <p className="font-sans text-earth-cream/80 text-sm sm:text-base max-w-md">
-                Premium Indian coffee sourced directly from the finest estates.
+              <p
+                className="font-sans text-sm sm:text-base max-w-md"
+                style={{ color: 'oklch(0.90 0.04 90)' }}
+              >
+                Premium Indian coffee connecting growers with global buyers.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Stats Row */}
-        <div className="grid grid-cols-3 gap-4 mb-12">
-          {[
-            { icon: <Globe className="w-5 h-5" />, value: '5+', label: 'States Sourced' },
-            { icon: <Award className="w-5 h-5" />, value: '100%', label: 'Quality Assured' },
-            { icon: <Star className="w-5 h-5" />, value: '50+', label: 'Happy Buyers' },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="text-center bg-white/5 border border-white/10 rounded-xl p-4 backdrop-blur-sm"
-            >
-              <div className="flex justify-center text-earth-amber mb-2">{stat.icon}</div>
-              <div className="font-serif font-bold text-2xl text-earth-cream">{stat.value}</div>
-              <div className="font-sans text-xs text-earth-cream/60 mt-0.5">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-
         {/* Product Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
           {products.map((product) => (
             <Card
               key={product.name}
-              className="bg-white/8 border border-white/10 backdrop-blur-sm shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 rounded-xl overflow-hidden"
-              style={{ backgroundColor: 'oklch(0.28 0.07 45 / 0.6)' }}
+              className="border transition-all duration-300 hover:-translate-y-1 rounded-xl overflow-hidden"
+              style={{
+                backgroundColor: 'oklch(0.32 0.08 45)',
+                borderColor: 'oklch(0.45 0.09 50 / 0.5)',
+                boxShadow: '0 4px 20px oklch(0.18 0.06 45 / 0.4)',
+              }}
             >
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between gap-2 mb-2">
-                  <div className="w-10 h-10 rounded-lg bg-earth-amber/20 flex items-center justify-center flex-shrink-0">
-                    <Coffee className="w-5 h-5 text-earth-amber" />
+                  <div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: 'oklch(0.72 0.18 75 / 0.18)' }}
+                  >
+                    <Coffee
+                      className="w-5 h-5"
+                      style={{ color: 'oklch(0.88 0.18 78)' }}
+                    />
                   </div>
-                  <span className="text-xs font-sans font-semibold px-2.5 py-1 rounded-full bg-earth-amber/20 text-earth-amber border border-earth-amber/30">
-                    {product.grade}
-                  </span>
+                  <div className="flex flex-col items-end gap-1">
+                    <span
+                      className="text-xs font-sans font-bold px-2.5 py-1 rounded-full"
+                      style={{
+                        backgroundColor: 'oklch(0.72 0.18 75 / 0.25)',
+                        color: 'oklch(0.92 0.18 80)',
+                        border: '1px solid oklch(0.82 0.18 75 / 0.4)',
+                      }}
+                    >
+                      {product.grade}
+                    </span>
+                  </div>
                 </div>
-                <CardTitle className="font-serif text-base text-earth-cream leading-snug">
+                <CardTitle
+                  className="font-serif text-lg leading-snug"
+                  style={{ color: 'oklch(0.95 0.10 82)' }}
+                >
                   {product.name}
                 </CardTitle>
-                <div className="flex items-center gap-1 text-xs text-earth-cream/50 font-sans">
+                <div
+                  className="flex items-center gap-1.5 text-xs font-sans font-medium mt-1"
+                  style={{ color: 'oklch(0.78 0.12 78)' }}
+                >
                   <Globe className="w-3 h-3" />
                   <span>{product.origin}</span>
                 </div>
-                <CardDescription className="font-sans text-sm text-earth-cream/60 leading-relaxed mt-1">
+                <CardDescription
+                  className="font-sans text-sm leading-relaxed mt-2"
+                  style={{ color: 'oklch(0.82 0.04 80)' }}
+                >
                   {product.description}
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
                 <ul className="space-y-1.5 mb-4">
                   {product.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm font-sans text-earth-cream/70">
-                      <CheckCircle className="w-3.5 h-3.5 text-earth-amber flex-shrink-0" />
+                    <li
+                      key={f}
+                      className="flex items-center gap-2 text-sm font-sans"
+                      style={{ color: 'oklch(0.88 0.04 88)' }}
+                    >
+                      <CheckCircle
+                        className="w-3.5 h-3.5 flex-shrink-0"
+                        style={{ color: 'oklch(0.82 0.18 78)' }}
+                      />
                       {f}
                     </li>
                   ))}
                 </ul>
-                <Button
+                <button
                   onClick={handleEnquire}
-                  className="w-full bg-earth-amber hover:bg-earth-amber-dark text-earth-brown font-semibold text-sm rounded-lg transition-all duration-200"
+                  className="w-full font-sans font-semibold text-sm rounded-lg py-2.5 transition-all duration-200 hover:scale-[1.02] focus:outline-none"
+                  style={{
+                    background: 'linear-gradient(135deg, oklch(0.78 0.16 78), oklch(0.62 0.16 68))',
+                    color: 'oklch(0.22 0.06 55)',
+                    boxShadow: '0 2px 10px oklch(0.72 0.16 78 / 0.3)',
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLButtonElement).style.boxShadow =
+                      '0 4px 16px oklch(0.72 0.16 78 / 0.5)';
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLButtonElement).style.boxShadow =
+                      '0 2px 10px oklch(0.72 0.16 78 / 0.3)';
+                  }}
                 >
                   Enquire Now
-                </Button>
+                </button>
               </CardContent>
             </Card>
+          ))}
+        </div>
+
+        {/* Bottom trust badges */}
+        <div className="mt-14 flex flex-wrap justify-center gap-6">
+          {[
+            { icon: <Award className="w-5 h-5" />, label: 'Quality Certified' },
+            { icon: <Globe className="w-5 h-5" />, label: 'Export Ready' },
+            { icon: <Coffee className="w-5 h-5" />, label: 'Direct from Estates' },
+          ].map((item) => (
+            <div
+              key={item.label}
+              className="flex items-center gap-2.5 px-5 py-2.5 rounded-full font-sans text-sm font-medium"
+              style={{
+                backgroundColor: 'oklch(0.72 0.18 75 / 0.15)',
+                border: '1px solid oklch(0.72 0.18 75 / 0.35)',
+                color: 'oklch(0.90 0.14 80)',
+              }}
+            >
+              {item.icon}
+              <span>{item.label}</span>
+            </div>
           ))}
         </div>
       </div>

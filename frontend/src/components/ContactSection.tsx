@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, MessageSquare, User, Package, Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Phone, MessageSquare, User, Package, Send, CheckCircle2, AlertCircle, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -111,17 +111,44 @@ export default function ContactSection() {
                 Your trusted partner for dairy feed, agri inputs, and coffee trading solutions.
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-5">
+                {/* Phone Numbers */}
                 <div className="flex items-start gap-3">
                   <div className="w-9 h-9 rounded-lg bg-earth-amber/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Phone className="w-4 h-4 text-earth-amber" />
                   </div>
                   <div>
-                    <p className="font-sans font-semibold text-earth-cream text-sm">Call Us</p>
-                    <p className="font-sans text-earth-cream/70 text-sm">+91 98765 43210</p>
+                    <p className="font-sans font-semibold text-earth-cream text-sm mb-1">Call Us</p>
+                    <a
+                      href="tel:9964072062"
+                      className="font-sans text-earth-cream/70 text-sm block hover:text-earth-amber transition-colors"
+                    >
+                      +91 99640 72062
+                    </a>
+                    <a
+                      href="tel:8431628989"
+                      className="font-sans text-earth-cream/70 text-sm block hover:text-earth-amber transition-colors"
+                    >
+                      +91 84316 28989
+                    </a>
                   </div>
                 </div>
 
+                {/* Address */}
+                <div className="flex items-start gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-earth-amber/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <MapPin className="w-4 h-4 text-earth-amber" />
+                  </div>
+                  <div>
+                    <p className="font-sans font-semibold text-earth-cream text-sm mb-1">Our Location</p>
+                    <p className="font-sans text-earth-cream/70 text-sm leading-relaxed">
+                      Mallipattana, Arkalgud,<br />
+                      Hassan, Karnataka 573102
+                    </p>
+                  </div>
+                </div>
+
+                {/* Products */}
                 <div className="flex items-start gap-3">
                   <div className="w-9 h-9 rounded-lg bg-earth-amber/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Package className="w-4 h-4 text-earth-amber" />
@@ -132,6 +159,7 @@ export default function ContactSection() {
                   </div>
                 </div>
 
+                {/* Response Time */}
                 <div className="flex items-start gap-3">
                   <div className="w-9 h-9 rounded-lg bg-earth-amber/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <MessageSquare className="w-4 h-4 text-earth-amber" />
@@ -227,7 +255,7 @@ export default function ContactSection() {
                       <Input
                         id="phone"
                         type="tel"
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 99640 72062"
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
                         className={`pl-9 font-sans ${errors.phone ? 'border-destructive' : ''}`}
@@ -301,11 +329,11 @@ export default function ContactSection() {
                   <Button
                     type="submit"
                     disabled={isPending}
-                    className="w-full bg-earth-green hover:bg-earth-green/90 text-earth-cream font-semibold text-base py-3 h-auto rounded-xl transition-all duration-200 flex items-center justify-center gap-2"
+                    className="w-full bg-earth-green hover:bg-earth-green/90 text-earth-cream font-semibold rounded-full py-3 text-base flex items-center justify-center gap-2"
                   >
                     {isPending ? (
                       <>
-                        <div className="w-4 h-4 border-2 border-earth-cream/30 border-t-earth-cream rounded-full animate-spin" />
+                        <span className="w-4 h-4 border-2 border-earth-cream/40 border-t-earth-cream rounded-full animate-spin" />
                         Submitting...
                       </>
                     ) : (

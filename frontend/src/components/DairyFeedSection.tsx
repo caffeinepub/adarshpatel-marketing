@@ -1,7 +1,6 @@
-import { Milk, Star, CheckCircle } from 'lucide-react';
+import { Milk, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 
 const products = [
   {
@@ -76,17 +75,17 @@ export default function DairyFeedSection({ onEnquire }: DairyFeedSectionProps) {
       {/* Section Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 bg-earth-green/10 border border-earth-green/20 text-earth-green px-4 py-1.5 rounded-full text-sm font-sans font-medium mb-4">
+          <div className="inline-flex items-center gap-2 bg-earth-green/10 border border-earth-green/25 text-earth-green px-4 py-1.5 rounded-full text-sm font-sans font-semibold mb-4">
             <Milk className="w-4 h-4" />
             <span>Dairy Nutrition Solutions</span>
           </div>
-          <h2 className="font-serif font-bold text-4xl sm:text-5xl text-earth-brown mb-4">
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl text-earth-brown mb-4 tracking-tight">
             Dairy Feed Products
           </h2>
-          <p className="font-sans text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="font-sans text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
             Science-backed nutrition solutions to maximize milk yield, improve herd health, and boost your dairy farm profitability.
           </p>
-          <div className="mt-6 w-20 h-1 bg-earth-amber mx-auto rounded-full" />
+          <div className="mt-6 w-20 h-1.5 bg-earth-amber mx-auto rounded-full" />
         </div>
 
         {/* Background accent image */}
@@ -96,12 +95,12 @@ export default function DairyFeedSection({ onEnquire }: DairyFeedSectionProps) {
             alt="Dairy cattle in green pasture"
             className="w-full h-48 sm:h-64 object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-earth-green/70 to-transparent flex items-center px-8 sm:px-12">
+          <div className="absolute inset-0 bg-gradient-to-r from-earth-green/75 to-transparent flex items-center px-8 sm:px-12">
             <div>
               <h3 className="font-serif font-bold text-2xl sm:text-3xl text-earth-cream mb-2">
                 Nourish Your Herd, Maximize Yield
               </h3>
-              <p className="font-sans text-earth-cream/80 text-sm sm:text-base max-w-md">
+              <p className="font-sans text-earth-cream/85 text-sm sm:text-base max-w-md">
                 Premium dairy nutrition trusted by farmers across the region.
               </p>
             </div>
@@ -144,7 +143,7 @@ export default function DairyFeedSection({ onEnquire }: DairyFeedSectionProps) {
                 </ul>
                 <Button
                   onClick={() => handleEnquire(product.name)}
-                  className="w-full bg-earth-green hover:bg-earth-green/90 text-earth-cream font-semibold text-sm rounded-lg transition-all duration-200"
+                  className="w-full bg-earth-green hover:bg-earth-green/85 text-earth-cream font-semibold text-sm rounded-lg transition-all duration-200 hover:shadow-md"
                 >
                   Enquire Now
                 </Button>

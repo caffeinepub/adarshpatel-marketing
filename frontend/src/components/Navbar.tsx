@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Leaf } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -30,36 +29,63 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-earth-green shadow-hero'
-          : 'bg-earth-green/95 backdrop-blur-sm'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      style={{
+        backgroundColor: scrolled
+          ? 'oklch(0.30 0.10 145)'
+          : 'oklch(0.30 0.10 145 / 0.97)',
+        backdropFilter: scrolled ? 'none' : 'blur(8px)',
+        boxShadow: scrolled ? '0 4px 24px oklch(0.18 0.06 55 / 0.45)' : 'none',
+        borderBottom: scrolled ? '1px solid oklch(0.45 0.10 145 / 0.4)' : 'none',
+      }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
+          {/* AP Logo — premium badge style */}
           <button
             onClick={() => handleNavClick('#home')}
-            className="flex items-center gap-3 group"
+            className="flex items-center gap-3 group focus:outline-none"
+            aria-label="Go to top"
           >
-            <div className="w-10 h-10 rounded-full overflow-hidden bg-earth-cream flex items-center justify-center flex-shrink-0">
+            {/* Logo circle badge */}
+            <div
+              className="relative w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-105"
+              style={{
+                background: 'linear-gradient(145deg, oklch(0.50 0.13 145), oklch(0.34 0.10 145))',
+                boxShadow:
+                  '0 0 0 2px oklch(0.72 0.16 78 / 0.75), 0 4px 12px oklch(0.18 0.06 55 / 0.4)',
+              }}
+            >
               <img
-                src="/assets/generated/logo-icon.dim_256x256.png"
-                alt="Adarshpatel Marketing Logo"
-                className="w-9 h-9 object-contain"
+                src="/assets/generated/ap-logo.dim_256x256.png"
+                alt="AP Logo"
+                className="w-7 h-7 md:w-8 md:h-8 object-contain relative z-10"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = 'none';
-                  (e.target as HTMLImageElement).parentElement!.innerHTML =
-                    '<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-earth-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"/><path d="M12 6v6l4 2"/></svg>';
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent) {
+                    const span = document.createElement('span');
+                    span.style.cssText =
+                      'font-family:serif;font-weight:900;font-size:1.1rem;color:oklch(0.95 0.14 82);letter-spacing:-0.02em;position:relative;z-index:10;';
+                    span.textContent = 'AP';
+                    parent.appendChild(span);
+                  }
                 }}
               />
             </div>
-            <div className="text-left">
-              <span className="block font-serif font-bold text-earth-cream text-lg leading-tight">
+            {/* Brand name */}
+            <div className="hidden sm:flex flex-col leading-tight">
+              <span
+                className="font-serif font-bold text-base md:text-lg leading-none"
+                style={{ color: 'oklch(0.97 0.02 90)' }}
+              >
                 Adarshpatel
               </span>
-              <span className="block font-sans text-earth-amber text-xs font-medium tracking-widest uppercase">
+              <span
+                className="font-sans text-xs font-medium tracking-widest uppercase"
+                style={{ color: 'oklch(0.82 0.16 78)' }}
+              >
                 Marketing
               </span>
             </div>
@@ -71,24 +97,55 @@ export default function Navbar() {
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className="px-4 py-2 text-earth-cream/90 hover:text-earth-amber font-sans text-sm font-medium transition-colors duration-200 rounded-md hover:bg-white/10"
+                className="px-4 py-2 font-sans text-sm font-medium transition-all duration-200 rounded-md focus:outline-none"
+                style={{ color: 'oklch(0.92 0.03 90)' }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.color = 'oklch(0.88 0.18 78)';
+                  (e.currentTarget as HTMLButtonElement).style.backgroundColor =
+                    'oklch(0.97 0.02 90 / 0.08)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.color = 'oklch(0.92 0.03 90)';
+                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'transparent';
+                }}
               >
                 {link.label}
               </button>
             ))}
-            <Button
+            <button
               onClick={() => handleNavClick('#contact')}
-              className="ml-4 bg-earth-amber hover:bg-earth-amber-dark text-earth-brown font-semibold text-sm px-5 py-2 rounded-full transition-all duration-200 shadow-sm"
+              className="ml-4 font-sans font-semibold text-sm px-5 py-2 rounded-full transition-all duration-200 focus:outline-none hover:scale-105"
+              style={{
+                background: 'linear-gradient(135deg, oklch(0.78 0.16 78), oklch(0.62 0.16 68))',
+                color: 'oklch(0.22 0.06 55)',
+                boxShadow: '0 2px 12px oklch(0.72 0.16 78 / 0.35)',
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.boxShadow =
+                  '0 4px 18px oklch(0.72 0.16 78 / 0.55)';
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.boxShadow =
+                  '0 2px 12px oklch(0.72 0.16 78 / 0.35)';
+              }}
             >
               Get Quote
-            </Button>
+            </button>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-earth-cream p-2 rounded-md hover:bg-white/10 transition-colors"
+            className="md:hidden p-2 rounded-md transition-colors focus:outline-none"
+            style={{ color: 'oklch(0.97 0.02 90)' }}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLButtonElement).style.backgroundColor =
+                'oklch(0.97 0.02 90 / 0.1)';
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'transparent';
+            }}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -97,23 +154,43 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-earth-green border-t border-white/10">
+        <div
+          className="md:hidden border-t"
+          style={{
+            backgroundColor: 'oklch(0.28 0.10 145)',
+            borderColor: 'oklch(0.45 0.10 145 / 0.4)',
+          }}
+        >
           <nav className="px-4 py-3 flex flex-col gap-1">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className="text-left px-4 py-3 text-earth-cream/90 hover:text-earth-amber font-sans text-sm font-medium transition-colors duration-200 rounded-md hover:bg-white/10"
+                className="text-left px-4 py-3 font-sans text-sm font-medium transition-colors duration-200 rounded-md focus:outline-none"
+                style={{ color: 'oklch(0.92 0.03 90)' }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.color = 'oklch(0.88 0.18 78)';
+                  (e.currentTarget as HTMLButtonElement).style.backgroundColor =
+                    'oklch(0.97 0.02 90 / 0.08)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.color = 'oklch(0.92 0.03 90)';
+                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'transparent';
+                }}
               >
                 {link.label}
               </button>
             ))}
-            <Button
+            <button
               onClick={() => handleNavClick('#contact')}
-              className="mt-2 bg-earth-amber hover:bg-earth-amber-dark text-earth-brown font-semibold text-sm rounded-full"
+              className="mt-2 font-sans font-semibold text-sm rounded-full py-2.5 transition-all duration-200 focus:outline-none"
+              style={{
+                background: 'linear-gradient(135deg, oklch(0.78 0.16 78), oklch(0.62 0.16 68))',
+                color: 'oklch(0.22 0.06 55)',
+              }}
             >
               Get Quote
-            </Button>
+            </button>
           </nav>
         </div>
       )}

@@ -76,7 +76,14 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-earth-amber mt-0.5 flex-shrink-0" />
-                <span className="font-sans text-sm text-earth-cream/70">+91 98765 43210</span>
+                <div className="font-sans text-sm text-earth-cream/70">
+                  <a href="tel:9964072062" className="block hover:text-earth-amber transition-colors">
+                    +91 99640 72062
+                  </a>
+                  <a href="tel:8431628989" className="block hover:text-earth-amber transition-colors">
+                    +91 84316 28989
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-2.5">
                 <Mail className="w-4 h-4 text-earth-amber mt-0.5 flex-shrink-0" />
@@ -85,7 +92,8 @@ export default function Footer() {
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-earth-amber mt-0.5 flex-shrink-0" />
                 <span className="font-sans text-sm text-earth-cream/70">
-                  Karnataka, India
+                  Mallipattana, Arkalgud,<br />
+                  Hassan, Karnataka 573102
                 </span>
               </li>
             </ul>

@@ -57,7 +57,7 @@ export default {
           DEFAULT: 'oklch(var(--coffee))',
           foreground: 'oklch(var(--coffee-foreground))',
           light: 'oklch(0.55 0.09 45)',
-          dark: 'oklch(0.28 0.07 45)',
+          dark: 'oklch(0.26 0.07 45)',
         },
         earth: {
           green: 'oklch(0.38 0.11 145)',
@@ -66,9 +66,10 @@ export default {
           brown: 'oklch(0.42 0.08 55)',
           'brown-light': 'oklch(0.62 0.08 55)',
           cream: 'oklch(0.97 0.02 90)',
-          'cream-dark': 'oklch(0.92 0.03 90)',
-          amber: 'oklch(0.72 0.14 75)',
-          'amber-dark': 'oklch(0.58 0.14 65)',
+          'cream-dark': 'oklch(0.93 0.03 88)',
+          amber: 'oklch(0.78 0.16 78)',
+          'amber-dark': 'oklch(0.62 0.16 68)',
+          'amber-light': 'oklch(0.90 0.12 82)',
         },
         chart: {
           1: 'oklch(var(--chart-1))',
@@ -98,6 +99,7 @@ export default {
         card: '0 4px 20px rgba(0,0,0,0.08)',
         'card-hover': '0 8px 32px rgba(0,0,0,0.14)',
         hero: '0 8px 40px rgba(0,0,0,0.3)',
+        'logo': '0 0 0 3px oklch(0.78 0.16 78 / 0.7), 0 8px 32px oklch(0.20 0.08 55 / 0.5)',
       },
       keyframes: {
         'accordion-down': {

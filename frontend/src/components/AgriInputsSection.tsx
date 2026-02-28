@@ -71,17 +71,17 @@ export default function AgriInputsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 bg-earth-amber/10 border border-earth-amber/20 text-earth-amber-dark px-4 py-1.5 rounded-full text-sm font-sans font-medium mb-4">
+          <div className="inline-flex items-center gap-2 bg-earth-amber/10 border border-earth-amber/25 text-earth-amber-dark px-4 py-1.5 rounded-full text-sm font-sans font-semibold mb-4">
             <Sprout className="w-4 h-4" />
             <span>Agricultural Inputs</span>
           </div>
-          <h2 className="font-serif font-bold text-4xl sm:text-5xl text-earth-brown mb-4">
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl text-earth-brown mb-4 tracking-tight">
             Agri Inputs
           </h2>
-          <p className="font-sans text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="font-sans text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
             Quality fertilizers, seeds, pesticides, and soil care products to help your crops thrive from sowing to harvest.
           </p>
-          <div className="mt-6 w-20 h-1 bg-earth-amber mx-auto rounded-full" />
+          <div className="mt-6 w-20 h-1.5 bg-earth-amber mx-auto rounded-full" />
         </div>
 
         {/* Background accent image */}
@@ -91,12 +91,12 @@ export default function AgriInputsSection() {
             alt="Agricultural inputs - fertilizers, seeds, and tools"
             className="w-full h-48 sm:h-64 object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-earth-brown/70 to-transparent flex items-center px-8 sm:px-12">
+          <div className="absolute inset-0 bg-gradient-to-r from-earth-brown/75 to-transparent flex items-center px-8 sm:px-12">
             <div>
               <h3 className="font-serif font-bold text-2xl sm:text-3xl text-earth-cream mb-2">
                 From Soil to Harvest
               </h3>
-              <p className="font-sans text-earth-cream/80 text-sm sm:text-base max-w-md">
+              <p className="font-sans text-earth-cream/85 text-sm sm:text-base max-w-md">
                 Everything your farm needs for a bountiful and profitable season.
               </p>
             </div>
@@ -139,7 +139,7 @@ export default function AgriInputsSection() {
                 </ul>
                 <Button
                   onClick={handleEnquire}
-                  className="w-full bg-earth-amber hover:bg-earth-amber-dark text-earth-brown font-semibold text-sm rounded-lg transition-all duration-200"
+                  className="w-full bg-earth-amber hover:bg-earth-amber-dark text-earth-brown font-semibold text-sm rounded-lg transition-all duration-200 hover:shadow-md"
                 >
                   Enquire Now
                 </Button>

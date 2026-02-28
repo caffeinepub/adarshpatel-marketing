@@ -1,196 +1,85 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Adarshpatel Marketing — Agriculture, Dairy Feed & Coffee Trading Website",
+  "title": "Logo style refresh, hero text color update, and design polish",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Create a branded homepage with hero section, company name, tagline, call-to-action button, and agriculture-themed background image",
+      "summary": "Redesign the AP monogram logo with an improved premium background using earthy colors and high-contrast lettering",
       "acceptanceCriteria": [
-        "Company name 'Adarshpatel Marketing' is prominently displayed in the header/hero",
-        "Tagline mentions dairy feed, agri inputs, and coffee trading",
-        "Hero section uses the agriculture-themed background image",
-        "A call-to-action button is visible and leads to the products section"
+        "The AP logo in the Hero has a visually distinct, well-styled background (circle, shield, or badge shape).",
+        "Logo background color is drawn from the existing earthy/agri palette (earth greens, coffee browns, or warm ambers).",
+        "The 'AP' initials are clearly legible with strong contrast against the logo background.",
+        "The logo does not look plain or flat — it has a premium, finished appearance."
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/Hero.tsx",
-          "operation": "create",
-          "description": "Create Hero component displaying 'Adarshpatel Marketing' as the company name, a tagline covering dairy feed, agri inputs, and coffee trading, and a call-to-action button. Use the generated background image frontend/public/assets/generated/hero-bg.dim_1600x700.png as the full-width hero backdrop. Ensure the hero section is visually prominent and uses earthy agricultural styling."
-        },
-        {
-          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Import and render the Hero component at the top of the main page layout. Wire the call-to-action button to scroll to the products sections."
+          "description": "Redesign the AP logo mark with a premium background shape (circular badge or shield) using a rich earthy color (deep earth-green or warm coffee-brown from the OKLCH palette). Apply high-contrast white or cream lettering for the 'AP' initials. Add subtle styling enhancements (shadow, border, or gradient) to create a polished, finished appearance that feels brand-appropriate for an agricultural/dairy business. Reference the existing generated logo assets in frontend/public/assets/generated/ap-logo.dim_256x256.png and frontend/public/assets/generated/logo-icon.dim_256x256.png as needed."
         }
       ]
     },
     {
       "id": "REQ-2",
-      "summary": "Build a Dairy Feed Products section with product cards showing name, description, and enquiry button",
+      "summary": "Update hero section text to use high-contrast, clearly visible font colors over the background image",
       "acceptanceCriteria": [
-        "A dedicated 'Dairy Feed Products' section exists on the page",
-        "At least 3 sample product cards are displayed",
-        "Each card has a name, description, and enquiry button",
-        "Section has a relevant icon or illustration"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/DairyFeedSection.tsx",
-          "operation": "create",
-          "description": "Create DairyFeedSection component that displays at least 3 dairy feed product cards. Each card should include a product name, short description, and an 'Enquire Now' button. Use the generated background image frontend/public/assets/generated/dairy-feed-bg.dim_800x400.png as a section background or accent. Include a relevant icon or illustration to distinguish this section."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import and render the DairyFeedSection component after the Hero section. Ensure proper section spacing and navigation anchor for scrolling."
-        }
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "summary": "Build an Agri Inputs section listing agricultural input products with product cards and enquiry buttons",
-      "acceptanceCriteria": [
-        "A dedicated 'Agri Inputs' section exists on the page",
-        "At least 3 sample agri input product cards are shown",
-        "Each card has a name, description, and enquiry button",
-        "Section visually distinguishes itself from other product sections"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/AgriInputsSection.tsx",
-          "operation": "create",
-          "description": "Create AgriInputsSection component displaying at least 3 agricultural input product cards (fertilizers, pesticides, seeds, etc.). Each card should include product name, short description, and an 'Enquire Now' button. Use the generated background image frontend/public/assets/generated/agri-inputs-bg.dim_800x400.png as a section background or accent. Ensure the section visually distinguishes itself from other product sections."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import and render the AgriInputsSection component after the DairyFeedSection. Ensure proper section spacing and navigation anchor."
-        }
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "summary": "Build a Coffee Trading section highlighting coffee trading services and varieties with product cards and enquiry buttons",
-      "acceptanceCriteria": [
-        "A dedicated 'Coffee Trading' section exists on the page",
-        "At least 2–3 coffee product or service cards are displayed",
-        "Each card has a name, description, and enquiry button",
-        "Section has a visually distinct coffee-themed appearance"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/CoffeeTradingSection.tsx",
-          "operation": "create",
-          "description": "Create CoffeeTradingSection component displaying at least 2–3 coffee product or service cards. Each card should include name, description, and an 'Enquire Now' button. Use the generated background image frontend/public/assets/generated/coffee-bg.dim_800x400.png as a section background or accent. Apply a visually distinct coffee-themed appearance with warm brown tones."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import and render the CoffeeTradingSection component after the AgriInputsSection. Ensure proper section spacing and navigation anchor."
-        }
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "summary": "Add a Contact/Enquiry section with a form capturing Name, Phone Number, Product of Interest, and Message that submits to the backend",
-      "acceptanceCriteria": [
-        "Contact form has fields: Name, Phone Number, Product of Interest (dropdown with Dairy Feed, Agri Inputs, Coffee Trading), and Message",
-        "Submitted enquiries are stored in the backend",
-        "User sees a success confirmation after submission",
-        "Form validates required fields before submission"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/ContactSection.tsx",
-          "operation": "create",
-          "description": "Create ContactSection component with a form containing fields for Name, Phone Number, Product of Interest (dropdown with options: Dairy Feed, Agri Inputs, Coffee Trading), and Message. Wire the form submission to call the backend submitEnquiry method using the backend interface. Validate required fields before submission. Display a success confirmation message after successful submission and handle errors gracefully."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import and render the ContactSection component after the CoffeeTradingSection. Ensure proper section spacing and navigation anchor."
-        }
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "summary": "Apply a rich, earthy agricultural visual theme with warm greens, browns, cream tones, bold serif headings, and consistent design across all sections",
-      "acceptanceCriteria": [
-        "Color palette consistently uses earthy greens, browns, and cream tones",
-        "Hero section uses the full-width agriculture-themed background image",
-        "Typography uses bold, trustworthy heading styles",
-        "All sections have a cohesive visual style",
-        "Website is responsive on desktop and mobile"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Update global styles to define a rich, earthy agricultural color palette using warm greens, deep soil browns, coffee browns, and cream/off-white tones. Define bold serif-style heading typography. Ensure no blue or purple colors are used. Add consistent section divider styling and ensure responsive design for desktop and mobile."
-        },
-        {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Extend Tailwind config with custom color variables for the earthy agricultural theme: warm greens, soil browns, coffee browns, and cream tones. Define custom font families for bold serif headings. Ensure the theme is consistent and reusable across all components."
-        }
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "summary": "Add a sticky navigation bar with company logo/name and links to all major sections",
-      "acceptanceCriteria": [
-        "Navbar displays 'Adarshpatel Marketing' brand name",
-        "Navigation links scroll to the correct sections",
-        "Navbar is sticky on scroll",
-        "Navbar is responsive and collapses to a hamburger menu on mobile"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/Navbar.tsx",
-          "operation": "create",
-          "description": "Create Navbar component displaying 'Adarshpatel Marketing' as the brand name with the generated logo icon frontend/public/assets/generated/logo-icon.dim_256x256.png. Include navigation links to Home, Dairy Feed, Agri Inputs, Coffee Trading, and Contact sections. Implement smooth scrolling to section anchors. Make the navbar sticky on scroll and responsive, collapsing to a hamburger menu on mobile."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import and render the Navbar component at the top of the application layout, above all other sections. Ensure the navbar remains sticky across all scroll positions."
-        }
-      ]
-    },
-    {
-      "id": "REQ-8",
-      "summary": "Render generated static images from frontend/public/assets/generated throughout the website",
-      "acceptanceCriteria": [
-        "Hero background image loads from frontend/public/assets/generated",
-        "Images are displayed at appropriate sizes and positions",
-        "No broken image links"
+        "The company name and tagline text in Hero.tsx are legible and contrast well with the background image.",
+        "Text color is explicitly set (not relying on the default theme variable that may be invisible over the image).",
+        "No hero text appears washed out or invisible on any common screen."
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/Hero.tsx",
           "operation": "modify",
-          "description": "Ensure the Hero component correctly references and displays frontend/public/assets/generated/hero-bg.dim_1600x700.png as the full-width background image. Verify the image loads correctly and is displayed at the appropriate size."
+          "description": "Explicitly set the hero text colors (company name, tagline, and supporting text) to warm white, cream, or a light earthy tone using inline OKLCH values or Tailwind utilities to ensure maximum legibility over the background image at frontend/public/assets/generated/hero-bg.dim_1600x700.png. Remove any reliance on default theme foreground variables that may be invisible. Test that all hero text is clearly readable on common screens."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Apply design polish for color consistency, typography hierarchy, spacing, and CTA button styling across the site",
+      "acceptanceCriteria": [
+        "Navbar brand colors and accent tones harmonize with the updated logo colors.",
+        "Hero CTA buttons have clearly styled hover/focus states.",
+        "Section headings across DairyFeedSection, AgriInputsSection, and CoffeeTradingSection use a consistent typographic hierarchy.",
+        "Overall visual impression is cohesive and professional."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Navbar.tsx",
+          "operation": "modify",
+          "description": "Update the navbar brand colors and accent tones to harmonize with the redesigned AP logo's earthy color scheme. Ensure the navbar styling feels cohesive with the updated logo and hero palette."
+        },
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "modify",
+          "description": "Refine CTA button styling with explicit hover and focus states that align with the updated logo colors and earthy palette. Ensure buttons have sufficient contrast and a polished appearance. Tighten spacing and improve typography hierarchy in the Hero section for a more professional layout."
         },
         {
           "path": "frontend/src/components/DairyFeedSection.tsx",
           "operation": "modify",
-          "description": "Ensure the DairyFeedSection component correctly references and displays frontend/public/assets/generated/dairy-feed-bg.dim_800x400.png as a section background or accent. Verify the image loads correctly."
+          "description": "Ensure section headings use a consistent typographic hierarchy that aligns with the overall design polish. Verify heading colors and sizing create a clear visual structure."
         },
         {
           "path": "frontend/src/components/AgriInputsSection.tsx",
           "operation": "modify",
-          "description": "Ensure the AgriInputsSection component correctly references and displays frontend/public/assets/generated/agri-inputs-bg.dim_800x400.png as a section background or accent. Verify the image loads correctly."
+          "description": "Apply consistent typographic hierarchy to section headings and ensure visual cohesion with the updated color scheme and design polish."
         },
         {
           "path": "frontend/src/components/CoffeeTradingSection.tsx",
           "operation": "modify",
-          "description": "Ensure the CoffeeTradingSection component correctly references and displays frontend/public/assets/generated/coffee-bg.dim_800x400.png as a section background or accent. Verify the image loads correctly."
+          "description": "Ensure section headings follow the same typographic hierarchy established across other sections for a cohesive, professional appearance."
         },
         {
-          "path": "frontend/src/components/Navbar.tsx",
+          "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Ensure the Navbar component correctly references and displays frontend/public/assets/generated/logo-icon.dim_256x256.png as the company logo icon. Verify the image loads correctly and is displayed at an appropriate size."
+          "description": "Refine or extend the existing earthy OKLCH color palette as needed to support the logo redesign and overall design polish. Ensure color tokens are well-organized and consistent across light and dark themes. Do not modify the base palette structure, only enhance existing tokens if necessary."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Update Tailwind configuration to support any new color variants or design tokens needed for the logo background, hero text, and CTA button styling. Ensure the configuration aligns with the refined OKLCH palette in index.css."
         }
       ]
     }

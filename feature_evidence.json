@@ -1,0 +1,160 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-branded-homepage-for-adarshpatel-marketing-with-a-hero-section-displaying-the-company-name-tagline-covering-dairy-feed-agri-inputs-and-coffee-trading-and-a-prominent-call-to-action-button-the-hero-section-must-use-the-generated-agriculture-themed-background-image",
+      "featureTitle": "Create a branded homepage for 'Adarshpatel Marketing' with a hero section displaying the company name, tagline covering dairy feed, agri inputs, and coffee trading, and a prominent call-to-action button. The hero section must use the generated agriculture-themed background image.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Hero.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-dairy-feed-products-section-showcasing-dairy-feed-products-with-product-cards-that-include-a-product-name-short-description-and-an-enquire-now-or-contact-us-button",
+      "featureTitle": "Build a Dairy Feed Products section showcasing dairy feed products with product cards that include a product name, short description, and an 'Enquire Now' or 'Contact Us' button.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/DairyFeedSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-an-agri-inputs-section-listing-agricultural-input-products-fertilizers-pesticides-seeds-etc-with-product-cards-showing-product-name-short-description-and-an-enquiry-button",
+      "featureTitle": "Build an Agri Inputs section listing agricultural input products (fertilizers, pesticides, seeds, etc.) with product cards showing product name, short description, and an enquiry button.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AgriInputsSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-coffee-trading-section-highlighting-coffee-trading-services-and-coffee-varieties-available-with-product-service-cards-and-an-enquiry-button",
+      "featureTitle": "Build a Coffee Trading section highlighting coffee trading services and coffee varieties available, with product/service cards and an enquiry button.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/CoffeeTradingSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-contact-enquiry-section-with-a-simple-form-name-phone-number-product-of-interest-message-fields-that-stores-submitted-enquiries-in-the-backend-canister",
+      "featureTitle": "Add a Contact / Enquiry section with a simple form (Name, Phone Number, Product of Interest, Message fields) that stores submitted enquiries in the backend canister.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ContactSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-rich-earthy-agricultural-visual-theme-throughout-the-website-warm-greens-deep-soil-browns-coffee-browns-and-cream-off-white-tones-use-bold-serif-style-headings-clear-section-dividers-and-the-generated-background-image-as-a-full-width-hero-backdrop-ensure-the-design-is-consistent-across-all-sections",
+      "featureTitle": "Apply a rich, earthy agricultural visual theme throughout the website — warm greens, deep soil browns, coffee browns, and cream/off-white tones. Use bold serif-style headings, clear section dividers, and the generated background image as a full-width hero backdrop. Ensure the design is consistent across all sections.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-navigation-bar-with-the-company-logo-name-adarshpatel-marketing-and-links-to-all-major-sections-home-dairy-feed-agri-inputs-coffee-trading-contact-the-navbar-should-be-sticky-and-accessible-on-scroll",
+      "featureTitle": "Add a navigation bar with the company logo/name 'Adarshpatel Marketing' and links to all major sections: Home, Dairy Feed, Agri Inputs, Coffee Trading, Contact. The navbar should be sticky and accessible on scroll.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Navbar.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-render-the-generated-static-images-hero-background-product-section-backgrounds-from-the-frontend-public-assets-generated-directory-throughout-the-website",
+      "featureTitle": "Render the generated static images (hero background, product section backgrounds) from the frontend/public/assets/generated directory throughout the website.",
+      "files": [
+        "frontend/src/components/AgriInputsSection.tsx",
+        "frontend/src/components/CoffeeTradingSection.tsx",
+        "frontend/src/components/DairyFeedSection.tsx",
+        "frontend/src/components/Hero.tsx",
+        "frontend/src/components/Navbar.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

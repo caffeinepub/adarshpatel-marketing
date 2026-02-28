@@ -1,0 +1,62 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-28T18:07:52.178Z",
+  "summary": "The diff implements a comprehensive agricultural marketing website for 'Adarshpatel Marketing' covering all 8 requirements. The implementation includes a branded homepage, product sections for dairy feed, agri inputs, and coffee trading, a contact/enquiry form wired to a Motoko backend canister, earthy visual theme, sticky navbar, and image references from the correct asset directory. All major requirements appear to be addressed with high fidelity.",
+  "missing_requirements": [],
+  "hallucinated_features": [
+    {
+      "description": "Internet Identity / authentication integration (useInternetIdentity hook, InternetIdentityProvider, AuthClient, login/clear/identity functions)",
+      "reason": "The build request explicitly states 'No user authentication or login' as a non-goal. The diff includes a full Internet Identity provider and hooks that enable authentication, which was not requested.",
+      "evidence": [
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts",
+        "frontend/src/main.tsx"
+      ]
+    },
+    {
+      "description": "getAllEnquiries and getEnquiry query functions exposed on the backend canister",
+      "reason": "The build request only required storing enquiries in the backend (REQ-5). Exposing retrieval endpoints was not requested.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Footer attribution link with caffeine.ai UTM tracking",
+      "reason": "No footer attribution or external branding was requested in the build request.",
+      "evidence": [
+        "frontend/src/components/Footer.tsx"
+      ]
+    },
+    {
+      "description": "'General Enquiry' option added to the Product of Interest dropdown",
+      "reason": "REQ-5 specifies the dropdown should contain exactly three options: Dairy Feed, Agri Inputs, Coffee Trading. A 'General' option was added beyond the specification.",
+      "evidence": [
+        "frontend/src/components/ContactSection.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.82,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/AgriInputsSection.tsx",
+    "frontend/src/components/CoffeeTradingSection.tsx",
+    "frontend/src/components/ContactSection.tsx",
+    "frontend/src/components/DairyFeedSection.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/Hero.tsx",
+    "frontend/src/components/Navbar.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "kind": "build_request",
+  "title": "Adarshpatel Marketing — Agriculture, Dairy Feed & Coffee Trading Website",
+  "projectName": "Adarshpatel Marketing",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a branded homepage for 'Adarshpatel Marketing' with a hero section displaying the company name, tagline covering dairy feed, agri inputs, and coffee trading, and a prominent call-to-action button. The hero section must use the generated agriculture-themed background image.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Creating app to market and sale a dairy feed product in the name Adarshpatel marketing and also deal with agri inputs and coffee trading"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Company name 'Adarshpatel Marketing' is prominently displayed in the header/hero",
+        "Tagline mentions dairy feed, agri inputs, and coffee trading",
+        "Hero section uses the agriculture-themed background image",
+        "A call-to-action button is visible and leads to the products section"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Build a Dairy Feed Products section showcasing dairy feed products with product cards that include a product name, short description, and an 'Enquire Now' or 'Contact Us' button.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "market and sale a dairy feed product"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A dedicated 'Dairy Feed Products' section exists on the page",
+        "At least 3 sample product cards are displayed",
+        "Each card has a name, description, and enquiry button",
+        "Section has a relevant icon or illustration"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Build an Agri Inputs section listing agricultural input products (fertilizers, pesticides, seeds, etc.) with product cards showing product name, short description, and an enquiry button.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "deal with agri inputs"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A dedicated 'Agri Inputs' section exists on the page",
+        "At least 3 sample agri input product cards are shown",
+        "Each card has a name, description, and enquiry button",
+        "Section visually distinguishes itself from other product sections"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build a Coffee Trading section highlighting coffee trading services and coffee varieties available, with product/service cards and an enquiry button.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "coffee trading"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A dedicated 'Coffee Trading' section exists on the page",
+        "At least 2–3 coffee product or service cards are displayed",
+        "Each card has a name, description, and enquiry button",
+        "Section has a visually distinct coffee-themed appearance"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add a Contact / Enquiry section with a simple form (Name, Phone Number, Product of Interest, Message fields) that stores submitted enquiries in the backend canister.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Creating app to market and sale a dairy feed product"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Contact form has fields: Name, Phone Number, Product of Interest (dropdown with Dairy Feed, Agri Inputs, Coffee Trading), and Message",
+        "Submitted enquiries are stored in the backend",
+        "User sees a success confirmation after submission",
+        "Form validates required fields before submission"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Apply a rich, earthy agricultural visual theme throughout the website — warm greens, deep soil browns, coffee browns, and cream/off-white tones. Use bold serif-style headings, clear section dividers, and the generated background image as a full-width hero backdrop. Ensure the design is consistent across all sections.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create website with background of agriculture coffee fertilizer dairy all those"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Color palette consistently uses earthy greens, browns, and cream tones",
+        "Hero section uses the full-width agriculture-themed background image",
+        "Typography uses bold, trustworthy heading styles",
+        "All sections have a cohesive visual style",
+        "Website is responsive on desktop and mobile"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Add a navigation bar with the company logo/name 'Adarshpatel Marketing' and links to all major sections: Home, Dairy Feed, Agri Inputs, Coffee Trading, Contact. The navbar should be sticky and accessible on scroll.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Adarshpatel marketing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navbar displays 'Adarshpatel Marketing' brand name",
+        "Navigation links scroll to the correct sections",
+        "Navbar is sticky on scroll",
+        "Navbar is responsive and collapses to a hamburger menu on mobile"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Render the generated static images (hero background, product section backgrounds) from the frontend/public/assets/generated directory throughout the website.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create website with background of agriculture coffee fertilizer dairy all those"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero background image loads from frontend/public/assets/generated",
+        "Images are displayed at appropriate sizes and positions",
+        "No broken image links"
+      ]
+    }
+  ],
+  "constraints": [
+    "All enquiry data must be stored in the Motoko backend canister only — no external databases or email services.",
+    "Do not use blue or purple in the color palette.",
+    "Company name must always be displayed as 'Adarshpatel Marketing'."
+  ],
+  "nonGoals": [
+    "No e-commerce checkout or payment processing",
+    "No user authentication or login",
+    "No real-time chat or messaging",
+    "No integration with external inventory or ERP systems",
+    "No multi-language support"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Wide panoramic collage of lush green agricultural fields, coffee plantation rows, dairy cows grazing, and bags of fertilizer under warm golden sunlight — earthy, vibrant, photorealistic style (hero-bg.dim_1600x700.png)",
+      "Close-up of dairy cattle with a soft green pasture background, warm sunlight — photorealistic (dairy-feed-bg.dim_800x400.png)",
+      "Overhead flat-lay of agricultural inputs: fertilizer bags, seed packets, spray bottles, and soil — earthy tones (agri-inputs-bg.dim_800x400.png)",
+      "Rich roasted coffee beans scattered on a rustic wooden surface with a small coffee plant sprig — warm brown tones (coffee-bg.dim_800x400.png)",
+      "Stylized green leaf and wheat stalk logo mark illustration for Adarshpatel Marketing — clean, minimal, on transparent background (logo-icon.dim_256x256.png)"
+    ],
+    "edits": []
+  }
+}

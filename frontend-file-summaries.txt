@@ -1,0 +1,13 @@
+{
+  "frontend/src/index.css": "Global styles with earthy agricultural OKLCH color palette (forest green, soil brown, coffee brown, cream/amber), Playfair Display serif headings, Inter body font, and utility classes for text shadows and section dividers.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with Playfair Display/Inter font families, custom earth color tokens (earth-green, earth-brown, earth-amber, coffee), card/hero box shadows, and fade-in-up animation.",
+  "frontend/src/hooks/useQueries.ts": "React Query mutation hook for submitting enquiries to the backend canister via the submitEnquiry method, with query invalidation on success.",
+  "frontend/src/App.tsx": "Root application component that composes Navbar, Hero, DairyFeedSection, AgriInputsSection, CoffeeTradingSection, ContactSection, and Footer in a single-page layout.",
+  "frontend/src/components/Navbar.tsx": "Sticky responsive navigation bar with Adarshpatel Marketing branding, logo image, smooth-scroll nav links, and a mobile hamburger menu.",
+  "frontend/src/components/Hero.tsx": "Full-screen hero section with agriculture background image, company name, tagline covering all three business lines, CTA buttons, and feature pills.",
+  "frontend/src/components/DairyFeedSection.tsx": "Dairy Feed Products section with 6 product cards (name, description, features, Enquire Now button), section banner image, and earthy green styling.",
+  "frontend/src/components/AgriInputsSection.tsx": "Agri Inputs section with 6 product cards covering fertilizers, seeds, pesticides, and soil care, with amber-toned styling and section banner image.",
+  "frontend/src/components/CoffeeTradingSection.tsx": "Coffee Trading section with dark coffee-brown theme, 4 coffee product cards, stats row, and section banner image.",
+  "frontend/src/components/ContactSection.tsx": "Contact and enquiry section with a validated form (Name, Phone, Product dropdown, Message) wired to the backend submitEnquiry mutation, with success confirmation and error handling.",
+  "frontend/src/components/Footer.tsx": "Full footer with brand info, quick navigation links, contact details, copyright with dynamic year, and caffeine.ai attribution with UTM tracking."
+}

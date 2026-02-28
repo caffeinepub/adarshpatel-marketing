@@ -1,0 +1,22 @@
+{
+  "backend/main.mo": "Motoko actor that defines an Enquiry type and exposes three functions: submitEnquiry (stores a new enquiry), getAllEnquiries (returns all enquiries as an array), and getEnquiry (returns a single enquiry by index).",
+  "feature_evidence.json": "Feature evidence report mapping each product feature (hero section, dairy feed, agri inputs, coffee trading, contact form) to their corresponding source files, UI components, test IDs, and confidence levels.",
+  "frontend-file-summaries.txt": "JSON document providing one-sentence descriptions of each frontend source file, covering styles, config, hooks, and all React components in the project.",
+  "frontend/index.css": "Tailwind base stylesheet that defines CSS custom properties for the light and dark color themes using OKLCH values for backgrounds, foregrounds, borders, and chart colors.",
+  "frontend/index.html": "Minimal HTML entry point for the Adarshpatel Marketing app that mounts the React app into a root div and loads the main TypeScript module.",
+  "frontend/src/App.tsx": "Root React component that assembles the single-page layout by rendering Navbar, Hero, DairyFeedSection, AgriInputsSection, CoffeeTradingSection, ContactSection, and Footer in order.",
+  "frontend/src/components/AgriInputsSection.tsx": "React section component displaying six agri-input product cards (fertilizers, seeds, pesticides, soil care) with category badges, feature tags, and an Enquire Now button that scrolls to the contact section.",
+  "frontend/src/components/CoffeeTradingSection.tsx": "React section component with a dark coffee-brown theme showcasing four coffee product cards (Arabica, Robusta, Plantation, Roasted) with grade, origin, features, and an enquiry CTA.",
+  "frontend/src/components/ContactSection.tsx": "React contact form component with Name, Phone, Product of Interest (dropdown), and Message fields, client-side validation, and submission wired to the backend canister via the useSubmitEnquiry mutation hook.",
+  "frontend/src/components/DairyFeedSection.tsx": "Renders a grid of six dairy feed product cards with badges, descriptions, and feature lists, each with an enquiry button that scrolls to the contact section or triggers a callback.",
+  "frontend/src/components/Footer.tsx": "Displays the site footer with brand info, quick navigation links, and contact details (phone, email, address) in a responsive grid layout.",
+  "frontend/src/components/Hero.tsx": "Full-screen hero section with a background image, company name, tagline highlighting three business areas, and CTA buttons to scroll to products or contact.",
+  "frontend/src/components/Navbar.tsx": "Fixed top navigation bar with smooth-scroll links, a logo, a 'Get Quote' button, and a responsive mobile hamburger menu.",
+  "frontend/src/hooks/useActor.ts": "Custom hook that creates and caches an ICP backend actor (anonymous or authenticated) using React Query, and invalidates dependent queries when the actor changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides an Internet Identity authentication context and hook, managing AuthClient creation, login, logout, and identity persistence with status tracking.",
+  "frontend/src/hooks/useQueries.ts": "Exports a `useSubmitEnquiry` mutation hook that calls the backend actor's `submitEnquiry` method and invalidates the enquiries query on success.",
+  "frontend/src/index.css": "Global CSS file that imports Google Fonts (Playfair Display, Inter), sets up Tailwind directives, and defines an earthy agricultural OKLCH color palette with CSS custom properties for both light and dark modes.",
+  "frontend/src/main.tsx": "React app entry point that mounts the app with QueryClientProvider for React Query and InternetIdentityProvider for ICP authentication wrapping the root App component.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration extending the theme with custom earthy/agricultural color tokens (earth, coffee, chart, sidebar), Playfair Display/Inter fonts, custom shadows, border radii, and animation keyframes.",
+  "project_state.json": "Project state descriptor for 'Adarshpatel Marketing' website, documenting existing features (hero, product sections, contact form, theming), required image assets, architectural notes, and schema versioning."
+}

@@ -1,13 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Refresh the AP logo style, update hero text colors for legibility, and apply design polish across the site for a cohesive, premium agricultural brand appearance.
+**Goal:** Finalize and deploy the Adarsh Patel Marketing site with a working enquiry form that submits data to the backend and opens a pre-filled WhatsApp chat to +91 8431628989 on successful submission.
 
 **Planned changes:**
-- Redesign the AP monogram logo in the Hero section with a rich earthy background shape (deep green, warm amber, or coffee brown) and high-contrast lettering for a polished, premium look
-- Update hero section text (company name, tagline, supporting text) to use warm white, cream, or a light earthy tone for strong contrast over the hero background image
-- Harmonize navbar brand colors and accent tones with the updated logo colors
-- Add clearly styled hover/focus states to Hero CTA buttons aligned with the refined color scheme
-- Apply consistent typographic hierarchy to section headings across DairyFeedSection, AgriInputsSection, and CoffeeTradingSection
+- Ensure the enquiry/contact form validates and submits user input correctly to the backend canister.
+- After successful form submission, open a WhatsApp link pre-filled with the enquiry details directed to +91 8431628989.
+- Verify all existing sections (Hero, Navbar, DairyFeed, AgriInputs, CoffeeTrading, Contact, Footer) render correctly for live deployment.
 
-**User-visible outcome:** The site looks polished and cohesive, with a premium logo, legible hero text, and consistent earthy color styling throughout the navbar, hero, and content sections.
+**User-visible outcome:** Visitors can fill out the enquiry form, have their details recorded, and are automatically redirected to a pre-filled WhatsApp chat with the business on submission.

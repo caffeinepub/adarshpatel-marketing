@@ -1,5 +1,4 @@
 import { ArrowDown, Leaf, Coffee, Wheat } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 export default function Hero() {
   const scrollToProducts = () => {
@@ -45,64 +44,44 @@ export default function Hero() {
           <span>Trusted Agricultural Partner Since 2010</span>
         </div>
 
-        {/* AP Logo — Premium circular badge */}
+        {/* Full AP Logo with cream background — prominent hero display */}
         <div className="flex justify-center mb-8">
           <div
-            className="relative w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center"
+            className="relative flex items-center justify-center overflow-hidden rounded-2xl transition-transform duration-300 hover:scale-105"
             style={{
-              background: 'linear-gradient(145deg, oklch(0.48 0.13 145), oklch(0.32 0.10 145))',
+              backgroundColor: '#F5F0E8',
+              padding: '16px 28px',
               boxShadow:
-                '0 0 0 4px oklch(0.72 0.16 78 / 0.7), 0 0 0 8px oklch(0.72 0.16 78 / 0.2), 0 12px 40px oklch(0.20 0.08 55 / 0.6)',
+                '0 0 0 3px oklch(0.72 0.16 78 / 0.55), 0 0 0 7px oklch(0.72 0.16 78 / 0.15), 0 16px 48px oklch(0.18 0.06 55 / 0.65)',
             }}
           >
-            {/* Inner ring */}
-            <div
-              className="absolute inset-2 rounded-full"
-              style={{
-                border: '1px solid oklch(0.82 0.14 78 / 0.4)',
-              }}
-            />
             <img
-              src="/assets/generated/ap-logo.dim_256x256.png"
-              alt="AP Logo"
-              className="w-20 h-20 md:w-24 md:h-24 object-contain relative z-10"
+              src="/assets/generated/ap-logo-full.dim_600x400.png"
+              alt="Adarsh Patel Logo"
+              className="w-56 sm:w-64 md:w-72 h-auto object-contain"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = 'none';
                 const parent = target.parentElement;
                 if (parent) {
-                  const span = document.createElement('span');
-                  span.style.cssText =
-                    'font-family:serif;font-weight:900;font-size:3.5rem;color:oklch(0.95 0.14 82);letter-spacing:-0.03em;position:relative;z-index:10;text-shadow:0 2px 8px rgba(0,0,0,0.4)';
-                  span.textContent = 'AP';
-                  parent.appendChild(span);
+                  const wrapper = document.createElement('div');
+                  wrapper.style.cssText = 'display:flex;flex-direction:column;align-items:center;gap:4px;';
+                  const badge = document.createElement('span');
+                  badge.style.cssText =
+                    'font-family:serif;font-weight:900;font-size:2.5rem;color:#c0392b;letter-spacing:-0.03em;';
+                  badge.textContent = 'AP';
+                  const name = document.createElement('span');
+                  name.style.cssText =
+                    'font-family:serif;font-weight:900;font-size:1.4rem;color:#c0392b;letter-spacing:0.08em;';
+                  name.textContent = 'ADARSH PATEL';
+                  wrapper.appendChild(badge);
+                  wrapper.appendChild(name);
+                  parent.appendChild(wrapper);
                 }
               }}
             />
           </div>
         </div>
-
-        {/* Main Heading */}
-        <h1 className="font-serif font-black leading-tight mb-4">
-          <span
-            className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
-            style={{
-              color: 'oklch(0.98 0.02 90)',
-              textShadow: '0 2px 12px rgba(0,0,0,0.5)',
-            }}
-          >
-            Adarshpatel
-          </span>
-          <span
-            className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-1"
-            style={{
-              color: 'oklch(0.88 0.18 78)',
-              textShadow: '0 2px 10px rgba(0,0,0,0.45)',
-            }}
-          >
-            Marketing
-          </span>
-        </h1>
 
         {/* Tagline */}
         <p

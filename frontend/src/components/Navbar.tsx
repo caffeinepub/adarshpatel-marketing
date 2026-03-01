@@ -41,25 +41,25 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* AP Logo — premium badge style */}
+          {/* Full AP Logo with cream background */}
           <button
             onClick={() => handleNavClick('#home')}
-            className="flex items-center gap-3 group focus:outline-none"
+            className="flex items-center group focus:outline-none"
             aria-label="Go to top"
           >
-            {/* Logo circle badge */}
             <div
-              className="relative w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-105"
+              className="relative flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-105 overflow-hidden rounded-lg"
               style={{
-                background: 'linear-gradient(145deg, oklch(0.50 0.13 145), oklch(0.34 0.10 145))',
+                backgroundColor: '#F5F0E8',
+                padding: '4px 10px',
                 boxShadow:
-                  '0 0 0 2px oklch(0.72 0.16 78 / 0.75), 0 4px 12px oklch(0.18 0.06 55 / 0.4)',
+                  '0 2px 10px oklch(0.18 0.06 55 / 0.35), 0 0 0 1px oklch(0.72 0.16 78 / 0.3)',
               }}
             >
               <img
-                src="/assets/generated/ap-logo.dim_256x256.png"
-                alt="AP Logo"
-                className="w-7 h-7 md:w-8 md:h-8 object-contain relative z-10"
+                src="/assets/generated/ap-logo-full.dim_600x400.png"
+                alt="Adarsh Patel Logo"
+                className="h-10 md:h-12 w-auto object-contain"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
@@ -67,27 +67,12 @@ export default function Navbar() {
                   if (parent) {
                     const span = document.createElement('span');
                     span.style.cssText =
-                      'font-family:serif;font-weight:900;font-size:1.1rem;color:oklch(0.95 0.14 82);letter-spacing:-0.02em;position:relative;z-index:10;';
-                    span.textContent = 'AP';
+                      'font-family:serif;font-weight:900;font-size:1.1rem;color:#c0392b;letter-spacing:-0.02em;';
+                    span.textContent = 'ADARSH PATEL';
                     parent.appendChild(span);
                   }
                 }}
               />
-            </div>
-            {/* Brand name */}
-            <div className="hidden sm:flex flex-col leading-tight">
-              <span
-                className="font-serif font-bold text-base md:text-lg leading-none"
-                style={{ color: 'oklch(0.97 0.02 90)' }}
-              >
-                Adarshpatel
-              </span>
-              <span
-                className="font-sans text-xs font-medium tracking-widest uppercase"
-                style={{ color: 'oklch(0.82 0.16 78)' }}
-              >
-                Marketing
-              </span>
             </div>
           </button>
 

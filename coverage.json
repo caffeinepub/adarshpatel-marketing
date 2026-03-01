@@ -1,74 +1,38 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-28T18:51:34.398Z",
+  "generatedAt": "2026-02-28T19:34:50.142Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 3,
-    "implemented": 3,
+    "total": 1,
+    "implemented": 0,
     "items": [
       {
         "id": "REQ-1",
-        "summary": "Redesign the AP monogram logo in the Hero section with an improved background — use a rich, earthy or premium color (e.g., deep green, warm amber, or coffee brown) as the logo background shape, with high-contrast lettering. Ensure the logo mark feels polished and brand-appropriate for an agricultural/dairy business.",
-        "status": "implemented",
+        "summary": "Confirm and finalize the current build of the Adarshpatel Marketing site for live deployment, ensuring the enquiry contact form correctly submits data to the backend and opens a pre-filled WhatsApp chat to +91 8431628989 on successful submission.",
+        "status": "missing",
         "plannedFiles": [
-          "frontend/src/components/Hero.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/Hero.tsx"
-        ]
-      },
-      {
-        "id": "REQ-2",
-        "summary": "Update the hero section's company name, tagline, and any supporting text to use a clearly visible, high-contrast font color that reads well over the hero background image. Prefer warm white, cream, or a light earthy tone rather than the default theme foreground.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/Hero.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/Hero.tsx"
-        ]
-      },
-      {
-        "id": "REQ-3",
-        "summary": "Apply overall design polish across the site: ensure color consistency between the logo, hero, navbar, and section headings using the established earthy/agri palette; tighten spacing and typography hierarchy in the Hero section; and make sure CTA buttons have sufficient contrast and hover states that align with the refined logo and color scheme.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/Navbar.tsx",
+          "frontend/src/components/ContactSection.tsx",
+          "frontend/src/hooks/useQueries.ts",
+          "frontend/src/App.tsx",
           "frontend/src/components/Hero.tsx",
+          "frontend/src/components/Navbar.tsx",
           "frontend/src/components/DairyFeedSection.tsx",
           "frontend/src/components/AgriInputsSection.tsx",
           "frontend/src/components/CoffeeTradingSection.tsx",
-          "frontend/src/index.css",
-          "frontend/tailwind.config.js"
+          "frontend/src/components/Footer.tsx"
         ],
-        "matchedFiles": [
-          "frontend/src/components/Navbar.tsx",
-          "frontend/src/components/Hero.tsx",
-          "frontend/src/components/DairyFeedSection.tsx",
-          "frontend/src/components/AgriInputsSection.tsx",
-          "frontend/src/components/CoffeeTradingSection.tsx",
-          "frontend/src/index.css",
-          "frontend/tailwind.config.js"
-        ]
+        "matchedFiles": []
       }
     ]
   },
   "changedFiles": [
     "build-request.json",
     "feature_evidence.json",
-    "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/components/AgriInputsSection.tsx",
-    "frontend/src/components/CoffeeTradingSection.tsx",
-    "frontend/src/components/DairyFeedSection.tsx",
-    "frontend/src/components/Hero.tsx",
-    "frontend/src/components/Navbar.tsx",
-    "frontend/src/index.css",
-    "frontend/tailwind.config.js",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

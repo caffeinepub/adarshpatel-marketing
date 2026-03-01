@@ -1,77 +1,41 @@
 {
   "kind": "build_request",
-  "title": "Logo style refresh, hero text color update, and design polish",
-  "projectName": "Adarshpatel Marketing",
+  "title": "Deploy current build live",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Redesign the AP monogram logo in the Hero section with an improved background — use a rich, earthy or premium color (e.g., deep green, warm amber, or coffee brown) as the logo background shape, with high-contrast lettering. Ensure the logo mark feels polished and brand-appropriate for an agricultural/dairy business.",
-      "target": "frontend",
+      "text": "Confirm and finalize the current build of the Adarshpatel Marketing site for live deployment, ensuring the enquiry contact form correctly submits data to the backend and opens a pre-filled WhatsApp chat to +91 8431628989 on successful submission.",
+      "target": "both",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-1",
+          "msg-2"
         ],
         "quotes": [
-          "Adjust the logo colors or style",
-          "good logo background"
+          "Ok go live",
+          "when submitted, it should open WhatsApp with the details pre-filled for 8431628989"
         ]
       },
       "acceptanceCriteria": [
-        "The AP logo in the Hero has a visually distinct, well-styled background (circle, shield, or badge shape).",
-        "Logo background color is drawn from the existing earthy/agri palette (earth greens, coffee browns, or warm ambers).",
-        "The 'AP' initials are clearly legible with strong contrast against the logo background.",
-        "The logo does not look plain or flat — it has a premium, finished appearance."
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "text": "Update the hero section's company name, tagline, and any supporting text to use a clearly visible, high-contrast font color that reads well over the hero background image. Prefer warm white, cream, or a light earthy tone rather than the default theme foreground.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-4"
-        ],
-        "quotes": [
-          "Change the font color of the hero text"
-        ]
-      },
-      "acceptanceCriteria": [
-        "The company name and tagline text in Hero.tsx are legible and contrast well with the background image.",
-        "Text color is explicitly set (not relying on the default theme variable that may be invisible over the image).",
-        "No hero text appears washed out or invisible on any common screen."
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "text": "Apply overall design polish across the site: ensure color consistency between the logo, hero, navbar, and section headings using the established earthy/agri palette; tighten spacing and typography hierarchy in the Hero section; and make sure CTA buttons have sufficient contrast and hover states that align with the refined logo and color scheme.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-4"
-        ],
-        "quotes": [
-          "Make other design tweaks"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Navbar brand colors and accent tones harmonize with the updated logo colors.",
-        "Hero CTA buttons have clearly styled hover/focus states.",
-        "Section headings across DairyFeedSection, AgriInputsSection, and CoffeeTradingSection use a consistent typographic hierarchy.",
-        "Overall visual impression is cohesive and professional."
+        "The enquiry form on the Contact section accepts and validates user input.",
+        "On successful form submission, the backend canister records the enquiry.",
+        "After submission, the browser opens a WhatsApp link pre-filled with the enquiry details directed to +91 8431628989.",
+        "All existing sections (Hero, Navbar, DairyFeed, AgriInputs, CoffeeTrading, Contact, Footer) render correctly.",
+        "The site is accessible and functional in a deployed environment."
       ]
     }
   ],
   "constraints": [
-    "Do not modify files under frontend/src/hooks/ or frontend/src/components/ui.",
-    "Preserve all backend logic in backend/main.mo — no backend changes required.",
-    "Keep the existing earthy agricultural OKLCH color palette as the base; only refine or extend it."
+    "Do not alter the immutable frontend paths (useInternetIdentity, useActor, main.tsx, ui components).",
+    "WhatsApp number must remain +91 8431628989.",
+    "Keep the single-actor Motoko backend architecture unchanged."
   ],
   "nonGoals": [
-    "Adding new sections or page content.",
-    "Changing the site structure or navigation links.",
-    "Any backend or data model changes.",
-    "Adding animations beyond what already exists."
+    "Adding new product sections or categories.",
+    "Changing the visual theme or color palette.",
+    "Implementing authentication or Internet Identity login flows.",
+    "Adding real-time features or external database integrations."
   ],
   "imageRequirements": {
     "required": [],

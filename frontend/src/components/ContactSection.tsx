@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Phone, MessageSquare, User, Package, Send, CheckCircle2, AlertCircle, MapPin } from 'lucide-react';
+import { SiWhatsapp } from 'react-icons/si';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -12,6 +13,8 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useSubmitEnquiry } from '@/hooks/useQueries';
+
+const WHATSAPP_NUMBER = '918431628989';
 
 const productOptions = [
   { value: 'Dairy Feed', label: 'Dairy Feed Products' },
@@ -32,6 +35,18 @@ interface FormErrors {
   phone?: string;
   product?: string;
   message?: string;
+}
+
+function buildWhatsAppUrl(form: FormState): string {
+  const text = [
+    `*New Enquiry from Adarshpatel Marketing Website*`,
+    ``,
+    `*Name:* ${form.name}`,
+    `*Phone:* ${form.phone}`,
+    `*Product of Interest:* ${form.product}`,
+    `*Message:* ${form.message}`,
+  ].join('\n');
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 
 export default function ContactSection() {
@@ -64,21 +79,22 @@ export default function ContactSection() {
     e.preventDefault();
     if (!validate()) return;
 
-    submitEnquiry(
-      {
-        name: form.name.trim(),
-        phone: form.phone.trim(),
-        product: form.product,
-        message: form.message.trim(),
+    const submittedForm = {
+      name: form.name.trim(),
+      phone: form.phone.trim(),
+      product: form.product,
+      message: form.message.trim(),
+    };
+
+    submitEnquiry(submittedForm, {
+      onSuccess: () => {
+        // Open WhatsApp with pre-filled message
+        window.open(buildWhatsAppUrl(submittedForm), '_blank', 'noopener,noreferrer');
+        setSubmitted(true);
+        setForm({ name: '', phone: '', product: '', message: '' });
+        setErrors({});
       },
-      {
-        onSuccess: () => {
-          setSubmitted(true);
-          setForm({ name: '', phone: '', product: '', message: '' });
-          setErrors({});
-        },
-      }
-    );
+    });
   };
 
   const handleReset = () => {
@@ -127,6 +143,26 @@ export default function ContactSection() {
                     </a>
                     <a
                       href="tel:8431628989"
+                      className="font-sans text-earth-cream/70 text-sm block hover:text-earth-amber transition-colors"
+                    >
+                      +91 84316 28989
+                    </a>
+                  </div>
+                </div>
+
+                {/* WhatsApp Enquiry */}
+                <div className="flex items-start gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-earth-amber/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <SiWhatsapp className="w-4 h-4 text-earth-amber" />
+                  </div>
+                  <div>
+                    <p className="font-sans font-semibold text-earth-cream text-sm mb-1">
+                      Enquiries (WhatsApp)
+                    </p>
+                    <a
+                      href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="font-sans text-earth-cream/70 text-sm block hover:text-earth-amber transition-colors"
                     >
                       +91 84316 28989
@@ -203,8 +239,20 @@ export default function ContactSection() {
                   <h3 className="font-serif font-bold text-2xl text-earth-brown mb-2">
                     Enquiry Submitted!
                   </h3>
-                  <p className="font-sans text-muted-foreground text-base mb-6">
-                    Thank you for reaching out. Our team will contact you within 24 hours.
+                  <p className="font-sans text-muted-foreground text-base mb-2">
+                    Thank you for reaching out. Your enquiry has been sent via WhatsApp to our team.
+                  </p>
+                  <p className="font-sans text-muted-foreground text-sm mb-6">
+                    If WhatsApp didn't open automatically,{' '}
+                    <a
+                      href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-earth-green underline hover:text-earth-green/80 transition-colors"
+                    >
+                      click here to message us directly
+                    </a>
+                    .
                   </p>
                   <Button
                     onClick={handleReset}
@@ -219,7 +267,7 @@ export default function ContactSection() {
                     Send an Enquiry
                   </h3>
                   <p className="font-sans text-muted-foreground text-sm mb-4">
-                    Fill in the details below and we'll get back to you shortly.
+                    Fill in the details below — your enquiry will be sent directly via WhatsApp.
                   </p>
 
                   {/* Name */}
@@ -338,8 +386,8 @@ export default function ContactSection() {
                       </>
                     ) : (
                       <>
-                        <Send className="w-4 h-4" />
-                        Submit Enquiry
+                        <SiWhatsapp className="w-4 h-4" />
+                        Send via WhatsApp
                       </>
                     )}
                   </Button>

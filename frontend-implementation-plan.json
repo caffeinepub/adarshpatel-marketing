@@ -1,85 +1,63 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Logo style refresh, hero text color update, and design polish",
+  "title": "Deploy Adarshpatel Marketing Site with WhatsApp Integration",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Redesign the AP monogram logo with an improved premium background using earthy colors and high-contrast lettering",
+      "summary": "Finalize the current build for live deployment with verified enquiry form submission to backend and WhatsApp chat integration",
       "acceptanceCriteria": [
-        "The AP logo in the Hero has a visually distinct, well-styled background (circle, shield, or badge shape).",
-        "Logo background color is drawn from the existing earthy/agri palette (earth greens, coffee browns, or warm ambers).",
-        "The 'AP' initials are clearly legible with strong contrast against the logo background.",
-        "The logo does not look plain or flat — it has a premium, finished appearance."
+        "The enquiry form on the Contact section accepts and validates user input.",
+        "On successful form submission, the backend canister records the enquiry.",
+        "After submission, the browser opens a WhatsApp link pre-filled with the enquiry details directed to +91 8431628989.",
+        "All existing sections (Hero, Navbar, DairyFeed, AgriInputs, CoffeeTrading, Contact, Footer) render correctly.",
+        "The site is accessible and functional in a deployed environment."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/Hero.tsx",
+          "path": "frontend/src/components/ContactSection.tsx",
           "operation": "modify",
-          "description": "Redesign the AP logo mark with a premium background shape (circular badge or shield) using a rich earthy color (deep earth-green or warm coffee-brown from the OKLCH palette). Apply high-contrast white or cream lettering for the 'AP' initials. Add subtle styling enhancements (shadow, border, or gradient) to create a polished, finished appearance that feels brand-appropriate for an agricultural/dairy business. Reference the existing generated logo assets in frontend/public/assets/generated/ap-logo.dim_256x256.png and frontend/public/assets/generated/logo-icon.dim_256x256.png as needed."
-        }
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "summary": "Update hero section text to use high-contrast, clearly visible font colors over the background image",
-      "acceptanceCriteria": [
-        "The company name and tagline text in Hero.tsx are legible and contrast well with the background image.",
-        "Text color is explicitly set (not relying on the default theme variable that may be invisible over the image).",
-        "No hero text appears washed out or invisible on any common screen."
-      ],
-      "file_operations": [
+          "description": "Verify and ensure the contact form submission handler correctly calls the backend submitEnquiry method and opens a WhatsApp chat link to +91 8431628989 with pre-filled enquiry details (name, phone, product, message) on successful submission. Confirm form validation is working and error states are handled appropriately."
+        },
         {
-          "path": "frontend/src/components/Hero.tsx",
+          "path": "frontend/src/hooks/useQueries.ts",
           "operation": "modify",
-          "description": "Explicitly set the hero text colors (company name, tagline, and supporting text) to warm white, cream, or a light earthy tone using inline OKLCH values or Tailwind utilities to ensure maximum legibility over the background image at frontend/public/assets/generated/hero-bg.dim_1600x700.png. Remove any reliance on default theme foreground variables that may be invisible. Test that all hero text is clearly readable on common screens."
-        }
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "summary": "Apply design polish for color consistency, typography hierarchy, spacing, and CTA button styling across the site",
-      "acceptanceCriteria": [
-        "Navbar brand colors and accent tones harmonize with the updated logo colors.",
-        "Hero CTA buttons have clearly styled hover/focus states.",
-        "Section headings across DairyFeedSection, AgriInputsSection, and CoffeeTradingSection use a consistent typographic hierarchy.",
-        "Overall visual impression is cohesive and professional."
-      ],
-      "file_operations": [
+          "description": "Verify the useSubmitEnquiry mutation hook correctly invokes the backend submitEnquiry method with the four required parameters (name, phone, product, message) and properly invalidates the enquiries query cache on success to ensure data consistency."
+        },
         {
-          "path": "frontend/src/components/Navbar.tsx",
+          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Update the navbar brand colors and accent tones to harmonize with the redesigned AP logo's earthy color scheme. Ensure the navbar styling feels cohesive with the updated logo and hero palette."
+          "description": "Verify all sections (Navbar, Hero, DairyFeedSection, AgriInputsSection, CoffeeTradingSection, ContactSection, Footer) are properly composed and rendered in the correct order. Ensure smooth-scroll behavior works for internal navigation and all section IDs are correctly referenced."
         },
         {
           "path": "frontend/src/components/Hero.tsx",
           "operation": "modify",
-          "description": "Refine CTA button styling with explicit hover and focus states that align with the updated logo colors and earthy palette. Ensure buttons have sufficient contrast and a polished appearance. Tighten spacing and improve typography hierarchy in the Hero section for a more professional layout."
+          "description": "Verify the hero section correctly uses the generated hero background image at frontend/public/assets/generated/hero-bg.dim_1600x700.png and that CTA buttons properly scroll to the products and contact sections. Ensure the AP logo image reference is correct."
+        },
+        {
+          "path": "frontend/src/components/Navbar.tsx",
+          "operation": "modify",
+          "description": "Verify the navbar correctly uses the generated AP logo at frontend/public/assets/generated/ap-logo.dim_256x256.png and that all navigation links (Home, Products, Coffee Trading, Contact) properly scroll to their target sections. Confirm mobile menu functionality works correctly."
         },
         {
           "path": "frontend/src/components/DairyFeedSection.tsx",
           "operation": "modify",
-          "description": "Ensure section headings use a consistent typographic hierarchy that aligns with the overall design polish. Verify heading colors and sizing create a clear visual structure."
+          "description": "Verify the dairy feed section correctly uses the generated background image at frontend/public/assets/generated/dairy-feed-bg.dim_800x400.png and that enquiry buttons properly scroll to the contact section with the correct section ID."
         },
         {
           "path": "frontend/src/components/AgriInputsSection.tsx",
           "operation": "modify",
-          "description": "Apply consistent typographic hierarchy to section headings and ensure visual cohesion with the updated color scheme and design polish."
+          "description": "Verify the agricultural inputs section correctly uses the generated background image at frontend/public/assets/generated/agri-inputs-bg.dim_800x400.png and that enquiry buttons properly scroll to the contact section with the correct section ID."
         },
         {
           "path": "frontend/src/components/CoffeeTradingSection.tsx",
           "operation": "modify",
-          "description": "Ensure section headings follow the same typographic hierarchy established across other sections for a cohesive, professional appearance."
+          "description": "Verify the coffee trading section correctly uses the generated background image at frontend/public/assets/generated/coffee-bg.dim_800x400.png and that enquiry buttons properly scroll to the contact section with the correct section ID."
         },
         {
-          "path": "frontend/src/index.css",
+          "path": "frontend/src/components/Footer.tsx",
           "operation": "modify",
-          "description": "Refine or extend the existing earthy OKLCH color palette as needed to support the logo redesign and overall design polish. Ensure color tokens are well-organized and consistent across light and dark themes. Do not modify the base palette structure, only enhance existing tokens if necessary."
-        },
-        {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Update Tailwind configuration to support any new color variants or design tokens needed for the logo background, hero text, and CTA button styling. Ensure the configuration aligns with the refined OKLCH palette in index.css."
+          "description": "Verify the footer displays correct contact information including phone number +91 8431628989, email, and address. Ensure quick navigation links properly scroll to their target sections and that the copyright notice is current."
         }
       ]
     }

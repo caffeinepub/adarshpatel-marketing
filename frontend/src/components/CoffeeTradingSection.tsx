@@ -1,4 +1,4 @@
-import { Coffee, CheckCircle, Globe, Award } from 'lucide-react';
+import { Coffee, CheckCircle, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
@@ -8,34 +8,41 @@ const products = [
     grade: 'Grade A',
     origin: 'Coorg, Karnataka',
     description:
-      'Premium Arabica green coffee beans sourced from the lush Coorg highlands. Known for their mild acidity, floral aroma, and complex flavor profile. Ideal for specialty roasters.',
-    features: ['Altitude: 1200–1500m', 'Mild Acidity', 'Floral & Fruity Notes'],
+      'Premium Arabica green coffee beans from the misty hills of Coorg. Known for their mild acidity, floral aroma, and complex flavor profile.',
+    features: ['Altitude: 1200m+', 'Mild Acidity', 'Floral Notes'],
   },
   {
     name: 'Robusta Coffee Beans',
     grade: 'Grade AA',
     origin: 'Chikmagalur, Karnataka',
     description:
-      'Bold and full-bodied Robusta beans from the Chikmagalur region. Higher caffeine content with earthy, chocolatey notes. Perfect for espresso blends and instant coffee production.',
-    features: ['High Caffeine', 'Bold & Earthy', 'Espresso Grade'],
+      'Bold and full-bodied Robusta beans from Chikmagalur. High caffeine content with earthy, chocolatey notes — ideal for espresso blends.',
+    features: ['High Caffeine', 'Bold Flavor', 'Espresso Grade'],
   },
   {
-    name: 'Plantation Coffee (Parchment)',
+    name: 'Plantation A Coffee',
+    grade: 'Plantation A',
+    origin: 'Hassan, Karnataka',
+    description:
+      'Classic Plantation A grade coffee with consistent bean size and quality. Versatile for filter coffee, instant blends, and export markets.',
+    features: ['Consistent Quality', 'Filter Grade', 'Export Ready'],
+  },
+  {
+    name: 'Specialty Micro-Lot',
     grade: 'Specialty',
-    origin: 'Wayanad, Kerala',
+    origin: 'Sakleshpur, Karnataka',
     description:
-      'Sun-dried plantation coffee in parchment form from Wayanad estates. Consistent quality with nutty, caramel undertones. Available in bulk quantities for commercial buyers.',
-    features: ['Sun Dried', 'Caramel Notes', 'Bulk Available'],
-  },
-  {
-    name: 'Roasted & Ground Coffee',
-    grade: 'Premium',
-    origin: 'Blended Origin',
-    description:
-      'Custom-roasted and ground coffee blends tailored to buyer specifications. Available in light, medium, and dark roast profiles for retail and food service markets.',
-    features: ['Custom Roast', 'Multiple Profiles', 'Retail Ready'],
+      'Limited micro-lot specialty coffee with traceable single-estate origin. Cupping score 85+, ideal for specialty roasters and premium cafes.',
+    features: ['Cupping Score 85+', 'Single Estate', 'Traceable Origin'],
   },
 ];
+
+const gradeColors: Record<string, string> = {
+  'Grade A': 'bg-earth-amber text-earth-brown',
+  'Grade AA': 'bg-earth-amber-dark text-earth-cream',
+  'Plantation A': 'bg-coffee text-earth-cream',
+  Specialty: 'bg-earth-green text-earth-cream',
+};
 
 export default function CoffeeTradingSection() {
   const handleEnquire = () => {
@@ -44,27 +51,39 @@ export default function CoffeeTradingSection() {
   };
 
   return (
-    <section id="coffee-trading" className="py-20 bg-coffee-dark relative overflow-hidden">
-      {/* Decorative background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, oklch(0.97 0.02 90) 1px, transparent 0)`,
-            backgroundSize: '32px 32px',
-          }}
+    <section
+      id="coffee-trading"
+      className="py-20 relative overflow-hidden"
+      style={{ backgroundColor: 'oklch(0.22 0.06 45)' }}
+    >
+      {/* Background image */}
+      <div className="absolute inset-0 opacity-20">
+        <img
+          src="/assets/generated/coffee-bg.dim_800x400.png"
+          alt="Coffee plantation"
+          className="w-full h-full object-cover object-center"
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Decorative pattern overlay */}
+      <div
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle at 25% 25%, oklch(0.78 0.16 78) 1px, transparent 1px), radial-gradient(circle at 75% 75%, oklch(0.78 0.16 78) 1px, transparent 1px)',
+          backgroundSize: '40px 40px',
+        }}
+      />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-14">
           <div
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-sans font-semibold mb-4 border"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-sans font-semibold mb-4"
             style={{
-              backgroundColor: 'oklch(0.72 0.18 75 / 0.22)',
-              borderColor: 'oklch(0.82 0.18 75 / 0.55)',
-              color: 'oklch(0.93 0.16 80)',
+              backgroundColor: 'oklch(0.72 0.14 75 / 0.18)',
+              border: '1px solid oklch(0.72 0.14 75 / 0.4)',
+              color: 'oklch(0.88 0.16 78)',
             }}
           >
             <Coffee className="w-4 h-4" />
@@ -72,99 +91,59 @@ export default function CoffeeTradingSection() {
           </div>
           <h2
             className="font-serif font-bold text-4xl sm:text-5xl mb-4 tracking-tight"
-            style={{ color: 'oklch(0.92 0.18 78)' }}
+            style={{ color: 'oklch(0.95 0.06 82)' }}
           >
             Coffee Trading
           </h2>
           <p
             className="font-sans text-lg max-w-2xl mx-auto leading-relaxed"
-            style={{ color: 'oklch(0.93 0.04 90)' }}
+            style={{ color: 'oklch(0.78 0.04 75)' }}
           >
-            Sourcing and trading the finest Indian coffee varieties — from farm to cup. Connecting growers with buyers across domestic and international markets.
+            Sourcing and trading premium Karnataka coffee — from estate to export, with quality you can taste.
           </p>
-          <div
-            className="mt-6 w-20 h-1.5 mx-auto rounded-full"
-            style={{ backgroundColor: 'oklch(0.82 0.18 75)' }}
-          />
-        </div>
-
-        {/* Background accent image */}
-        <div className="relative rounded-2xl overflow-hidden mb-12 shadow-hero">
-          <img
-            src="/assets/generated/coffee-bg.dim_800x400.png"
-            alt="Rich roasted coffee beans"
-            className="w-full h-48 sm:h-64 object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-coffee-dark/85 to-transparent flex items-center px-8 sm:px-12">
-            <div>
-              <h3
-                className="font-serif font-bold text-2xl sm:text-3xl mb-2"
-                style={{ color: 'oklch(0.93 0.18 80)' }}
-              >
-                From Plantation to Cup
-              </h3>
-              <p
-                className="font-sans text-sm sm:text-base max-w-md"
-                style={{ color: 'oklch(0.90 0.04 90)' }}
-              >
-                Premium Indian coffee connecting growers with global buyers.
-              </p>
-            </div>
-          </div>
+          <div className="mt-6 w-20 h-1.5 bg-earth-amber mx-auto rounded-full" />
         </div>
 
         {/* Product Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
           {products.map((product) => (
             <Card
               key={product.name}
               className="border transition-all duration-300 hover:-translate-y-1 rounded-xl overflow-hidden"
               style={{
-                backgroundColor: 'oklch(0.32 0.08 45)',
-                borderColor: 'oklch(0.45 0.09 50 / 0.5)',
-                boxShadow: '0 4px 20px oklch(0.18 0.06 45 / 0.4)',
+                backgroundColor: 'oklch(0.28 0.07 45)',
+                borderColor: 'oklch(0.38 0.08 45)',
               }}
             >
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between gap-2 mb-2">
                   <div
                     className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: 'oklch(0.72 0.18 75 / 0.18)' }}
+                    style={{ backgroundColor: 'oklch(0.72 0.14 75 / 0.15)' }}
                   >
-                    <Coffee
-                      className="w-5 h-5"
-                      style={{ color: 'oklch(0.88 0.18 78)' }}
-                    />
+                    <Coffee className="w-5 h-5" style={{ color: 'oklch(0.82 0.16 78)' }} />
                   </div>
-                  <div className="flex flex-col items-end gap-1">
-                    <span
-                      className="text-xs font-sans font-bold px-2.5 py-1 rounded-full"
-                      style={{
-                        backgroundColor: 'oklch(0.72 0.18 75 / 0.25)',
-                        color: 'oklch(0.92 0.18 80)',
-                        border: '1px solid oklch(0.82 0.18 75 / 0.4)',
-                      }}
-                    >
-                      {product.grade}
-                    </span>
-                  </div>
+                  <span
+                    className={`text-xs font-sans font-semibold px-2.5 py-1 rounded-full ${gradeColors[product.grade] || 'bg-muted text-muted-foreground'}`}
+                  >
+                    {product.grade}
+                  </span>
                 </div>
                 <CardTitle
                   className="font-serif text-lg leading-snug"
-                  style={{ color: 'oklch(0.95 0.10 82)' }}
+                  style={{ color: 'oklch(0.93 0.06 82)' }}
                 >
                   {product.name}
                 </CardTitle>
-                <div
-                  className="flex items-center gap-1.5 text-xs font-sans font-medium mt-1"
-                  style={{ color: 'oklch(0.78 0.12 78)' }}
+                <p
+                  className="font-sans text-xs font-medium"
+                  style={{ color: 'oklch(0.72 0.12 78)' }}
                 >
-                  <Globe className="w-3 h-3" />
-                  <span>{product.origin}</span>
-                </div>
+                  📍 {product.origin}
+                </p>
                 <CardDescription
-                  className="font-sans text-sm leading-relaxed mt-2"
-                  style={{ color: 'oklch(0.82 0.04 80)' }}
+                  className="font-sans text-sm leading-relaxed mt-1"
+                  style={{ color: 'oklch(0.68 0.04 75)' }}
                 >
                   {product.description}
                 </CardDescription>
@@ -175,58 +154,50 @@ export default function CoffeeTradingSection() {
                     <li
                       key={f}
                       className="flex items-center gap-2 text-sm font-sans"
-                      style={{ color: 'oklch(0.88 0.04 88)' }}
+                      style={{ color: 'oklch(0.78 0.04 75)' }}
                     >
                       <CheckCircle
                         className="w-3.5 h-3.5 flex-shrink-0"
-                        style={{ color: 'oklch(0.82 0.18 78)' }}
+                        style={{ color: 'oklch(0.78 0.16 78)' }}
                       />
                       {f}
                     </li>
                   ))}
                 </ul>
-                <button
+                <Button
                   onClick={handleEnquire}
-                  className="w-full font-sans font-semibold text-sm rounded-lg py-2.5 transition-all duration-200 hover:scale-[1.02] focus:outline-none"
+                  className="w-full font-semibold text-sm rounded-lg transition-all duration-200"
                   style={{
                     background: 'linear-gradient(135deg, oklch(0.78 0.16 78), oklch(0.62 0.16 68))',
                     color: 'oklch(0.22 0.06 55)',
-                    boxShadow: '0 2px 10px oklch(0.72 0.16 78 / 0.3)',
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLButtonElement).style.boxShadow =
-                      '0 4px 16px oklch(0.72 0.16 78 / 0.5)';
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLButtonElement).style.boxShadow =
-                      '0 2px 10px oklch(0.72 0.16 78 / 0.3)';
                   }}
                 >
                   Enquire Now
-                </button>
+                </Button>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Bottom trust badges */}
-        <div className="mt-14 flex flex-wrap justify-center gap-6">
+        {/* Trust Badges */}
+        <div className="flex flex-wrap justify-center gap-4">
           {[
-            { icon: <Award className="w-5 h-5" />, label: 'Quality Certified' },
-            { icon: <Globe className="w-5 h-5" />, label: 'Export Ready' },
-            { icon: <Coffee className="w-5 h-5" />, label: 'Direct from Estates' },
-          ].map((item) => (
+            { icon: <Star className="w-4 h-4" />, label: 'Direct Estate Sourcing' },
+            { icon: <CheckCircle className="w-4 h-4" />, label: 'Quality Certified' },
+            { icon: <Coffee className="w-4 h-4" />, label: 'Export Ready' },
+            { icon: <Star className="w-4 h-4" />, label: 'Competitive Pricing' },
+          ].map((badge) => (
             <div
-              key={item.label}
-              className="flex items-center gap-2.5 px-5 py-2.5 rounded-full font-sans text-sm font-medium"
+              key={badge.label}
+              className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-sans font-medium"
               style={{
-                backgroundColor: 'oklch(0.72 0.18 75 / 0.15)',
-                border: '1px solid oklch(0.72 0.18 75 / 0.35)',
-                color: 'oklch(0.90 0.14 80)',
+                backgroundColor: 'oklch(0.72 0.14 75 / 0.12)',
+                border: '1px solid oklch(0.72 0.14 75 / 0.3)',
+                color: 'oklch(0.85 0.12 78)',
               }}
             >
-              {item.icon}
-              <span>{item.label}</span>
+              {badge.icon}
+              <span>{badge.label}</span>
             </div>
           ))}
         </div>

@@ -1,63 +1,22 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Deploy Adarshpatel Marketing Site with WhatsApp Integration",
+  "title": "Refine Hero tagline text color and font style",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Finalize the current build for live deployment with verified enquiry form submission to backend and WhatsApp chat integration",
+      "summary": "Update Hero section tagline to use a bold serif font and warm golden-amber color for a premium, refined appearance",
       "acceptanceCriteria": [
-        "The enquiry form on the Contact section accepts and validates user input.",
-        "On successful form submission, the backend canister records the enquiry.",
-        "After submission, the browser opens a WhatsApp link pre-filled with the enquiry details directed to +91 8431628989.",
-        "All existing sections (Hero, Navbar, DairyFeed, AgriInputs, CoffeeTrading, Contact, Footer) render correctly.",
-        "The site is accessible and functional in a deployed environment."
+        "The Hero tagline uses a refined, bold serif font (e.g., Fraunces at a heavier weight or a more prominent variant).",
+        "The tagline color is updated to a warm golden-amber tone that is noticeably richer or more saturated than the previous version.",
+        "The tagline remains clearly legible against the hero background image and gradient overlays.",
+        "No other text elements outside the tagline are unintentionally affected."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/ContactSection.tsx",
-          "operation": "modify",
-          "description": "Verify and ensure the contact form submission handler correctly calls the backend submitEnquiry method and opens a WhatsApp chat link to +91 8431628989 with pre-filled enquiry details (name, phone, product, message) on successful submission. Confirm form validation is working and error states are handled appropriately."
-        },
-        {
-          "path": "frontend/src/hooks/useQueries.ts",
-          "operation": "modify",
-          "description": "Verify the useSubmitEnquiry mutation hook correctly invokes the backend submitEnquiry method with the four required parameters (name, phone, product, message) and properly invalidates the enquiries query cache on success to ensure data consistency."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Verify all sections (Navbar, Hero, DairyFeedSection, AgriInputsSection, CoffeeTradingSection, ContactSection, Footer) are properly composed and rendered in the correct order. Ensure smooth-scroll behavior works for internal navigation and all section IDs are correctly referenced."
-        },
-        {
           "path": "frontend/src/components/Hero.tsx",
           "operation": "modify",
-          "description": "Verify the hero section correctly uses the generated hero background image at frontend/public/assets/generated/hero-bg.dim_1600x700.png and that CTA buttons properly scroll to the products and contact sections. Ensure the AP logo image reference is correct."
-        },
-        {
-          "path": "frontend/src/components/Navbar.tsx",
-          "operation": "modify",
-          "description": "Verify the navbar correctly uses the generated AP logo at frontend/public/assets/generated/ap-logo.dim_256x256.png and that all navigation links (Home, Products, Coffee Trading, Contact) properly scroll to their target sections. Confirm mobile menu functionality works correctly."
-        },
-        {
-          "path": "frontend/src/components/DairyFeedSection.tsx",
-          "operation": "modify",
-          "description": "Verify the dairy feed section correctly uses the generated background image at frontend/public/assets/generated/dairy-feed-bg.dim_800x400.png and that enquiry buttons properly scroll to the contact section with the correct section ID."
-        },
-        {
-          "path": "frontend/src/components/AgriInputsSection.tsx",
-          "operation": "modify",
-          "description": "Verify the agricultural inputs section correctly uses the generated background image at frontend/public/assets/generated/agri-inputs-bg.dim_800x400.png and that enquiry buttons properly scroll to the contact section with the correct section ID."
-        },
-        {
-          "path": "frontend/src/components/CoffeeTradingSection.tsx",
-          "operation": "modify",
-          "description": "Verify the coffee trading section correctly uses the generated background image at frontend/public/assets/generated/coffee-bg.dim_800x400.png and that enquiry buttons properly scroll to the contact section with the correct section ID."
-        },
-        {
-          "path": "frontend/src/components/Footer.tsx",
-          "operation": "modify",
-          "description": "Verify the footer displays correct contact information including phone number +91 8431628989, email, and address. Ensure quick navigation links properly scroll to their target sections and that the copyright notice is current."
+          "description": "Update the Hero tagline element styling to apply a bold serif font (e.g., font-fraunces with font-bold or font-extrabold) and change the text color to a warm, rich golden-amber shade (e.g., using a custom Tailwind color class or inline style with an OKLCH/hex value like #d4a574 or oklch(75% 0.12 75)). Ensure the tagline selector targets only the tagline text and does not affect other Hero text elements."
         }
       ]
     }

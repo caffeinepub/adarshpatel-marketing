@@ -82,7 +82,7 @@ export default function Navbar() {
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className="px-4 py-2 font-sans text-sm font-medium transition-all duration-200 rounded-md focus:outline-none"
+                className="px-4 py-2 font-sans text-sm font-medium tracking-wide transition-all duration-200 rounded-md focus:outline-none"
                 style={{ color: 'oklch(0.92 0.03 90)' }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLButtonElement).style.color = 'oklch(0.88 0.18 78)';
@@ -151,7 +151,7 @@ export default function Navbar() {
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className="text-left px-4 py-3 font-sans text-sm font-medium transition-colors duration-200 rounded-md focus:outline-none"
+                className="text-left px-4 py-3 font-sans text-sm font-medium tracking-wide transition-colors duration-200 rounded-md focus:outline-none"
                 style={{ color: 'oklch(0.92 0.03 90)' }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLButtonElement).style.color = 'oklch(0.88 0.18 78)';

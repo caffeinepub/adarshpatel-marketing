@@ -1,41 +1,39 @@
 {
   "kind": "build_request",
-  "title": "Deploy current build live",
+  "title": "Refine Hero tagline text color and font style",
+  "projectName": "Adarshpatel Marketing",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Confirm and finalize the current build of the Adarshpatel Marketing site for live deployment, ensuring the enquiry contact form correctly submits data to the backend and opens a pre-filled WhatsApp chat to +91 8431628989 on successful submission.",
-      "target": "both",
+      "text": "Update the Hero section tagline styling to a more refined and visually distinct look: change the font to a bold, elegant serif style and adjust the text color to a warm, rich golden-amber shade that stands out clearly against the hero background — ensuring the result feels premium and professional.",
+      "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1",
-          "msg-2"
+          "msg-latest"
         ],
         "quotes": [
-          "Ok go live",
-          "when submitted, it should open WhatsApp with the details pre-filled for 8431628989"
+          "Ok you do",
+          "Want to refine the shade or try a different style"
         ]
       },
       "acceptanceCriteria": [
-        "The enquiry form on the Contact section accepts and validates user input.",
-        "On successful form submission, the backend canister records the enquiry.",
-        "After submission, the browser opens a WhatsApp link pre-filled with the enquiry details directed to +91 8431628989.",
-        "All existing sections (Hero, Navbar, DairyFeed, AgriInputs, CoffeeTrading, Contact, Footer) render correctly.",
-        "The site is accessible and functional in a deployed environment."
+        "The Hero tagline uses a refined, bold serif font (e.g., Fraunces at a heavier weight or a more prominent variant).",
+        "The tagline color is updated to a warm golden-amber tone that is noticeably richer or more saturated than the previous version.",
+        "The tagline remains clearly legible against the hero background image and gradient overlays.",
+        "No other text elements outside the tagline are unintentionally affected."
       ]
     }
   ],
   "constraints": [
-    "Do not alter the immutable frontend paths (useInternetIdentity, useActor, main.tsx, ui components).",
-    "WhatsApp number must remain +91 8431628989.",
-    "Keep the single-actor Motoko backend architecture unchanged."
+    "Do not change the backend schema or any backend logic.",
+    "Do not modify files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui.",
+    "Only the Hero tagline styling should be changed — no other sections or components."
   ],
   "nonGoals": [
-    "Adding new product sections or categories.",
-    "Changing the visual theme or color palette.",
-    "Implementing authentication or Internet Identity login flows.",
-    "Adding real-time features or external database integrations."
+    "Changing any other section's typography or color palette.",
+    "Adding new sections or components.",
+    "Modifying the Navbar, Footer, or any product section styling."
   ],
   "imageRequirements": {
     "required": [],

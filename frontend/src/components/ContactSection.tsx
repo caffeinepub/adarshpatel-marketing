@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, MessageSquare, User, Package, Send, CheckCircle2, AlertCircle, MapPin } from 'lucide-react';
+import { Phone, MessageSquare, User, Package, Send, CheckCircle2, AlertCircle, MapPin, Loader2 } from 'lucide-react';
 import { SiWhatsapp } from 'react-icons/si';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -88,7 +88,6 @@ export default function ContactSection() {
 
     submitEnquiry(submittedForm, {
       onSuccess: () => {
-        // Open WhatsApp with pre-filled message
         window.open(buildWhatsAppUrl(submittedForm), '_blank', 'noopener,noreferrer');
         setSubmitted(true);
         setForm({ name: '', phone: '', product: '', message: '' });
@@ -381,13 +380,13 @@ export default function ContactSection() {
                   >
                     {isPending ? (
                       <>
-                        <span className="w-4 h-4 border-2 border-earth-cream/40 border-t-earth-cream rounded-full animate-spin" />
+                        <Loader2 className="w-4 h-4 animate-spin" />
                         Submitting...
                       </>
                     ) : (
                       <>
-                        <SiWhatsapp className="w-4 h-4" />
-                        Send via WhatsApp
+                        <Send className="w-4 h-4" />
+                        Send Enquiry via WhatsApp
                       </>
                     )}
                   </Button>

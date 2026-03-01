@@ -83,51 +83,39 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Tagline */}
+        {/* Tagline — rich warm amber with Fraunces extrabold serif */}
         <p
-          className="font-serif font-bold text-xl sm:text-2xl md:text-3xl max-w-3xl mx-auto mb-5 leading-snug"
+          className="font-serif font-extrabold text-2xl sm:text-3xl md:text-4xl max-w-3xl mx-auto mb-5 leading-snug"
           style={{
-            color: 'oklch(0.97 0.12 82)',
-            textShadow: '0 2px 10px rgba(0,0,0,0.65)',
+            background:
+              'linear-gradient(135deg, #F5C842 0%, #E8900A 30%, #C96A00 60%, #E8900A 80%, #F5C842 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            filter:
+              'drop-shadow(0 2px 12px rgba(232, 144, 10, 0.70)) drop-shadow(0 0px 4px rgba(245, 200, 66, 0.45))',
+            letterSpacing: '0.015em',
           }}
         >
-          Premium dairy nutrition trusted by farmers across the region
+          Premium dairy nutrition trusted by farmers across the region.
         </p>
 
-        {/* Subheading */}
+        {/* Sub-tagline */}
         <p
-          className="font-sans font-medium text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="font-sans text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
           style={{
-            color: 'oklch(0.96 0.03 90)',
-            textShadow: '0 1px 6px rgba(0,0,0,0.6)',
+            color: 'oklch(0.88 0.04 90)',
+            textShadow: '0 1px 6px rgba(0,0,0,0.4)',
           }}
         >
-          Empowering farmers and agribusinesses with{' '}
-          <span
-            style={{
-              color: 'oklch(0.92 0.16 82)',
-              fontWeight: 600,
-            }}
-          >
-            premium quality products
-          </span>{' '}
-          and expert guidance for a{' '}
-          <span
-            style={{
-              color: 'oklch(0.90 0.14 145)',
-              fontWeight: 600,
-            }}
-          >
-            prosperous harvest
-          </span>
-          .
+          Dairy feed, agri inputs & premium coffee — all under one trusted name.
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
           <button
             onClick={scrollToProducts}
-            className="group relative inline-flex items-center justify-center px-8 py-3.5 rounded-full font-sans font-semibold text-base transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2"
+            className="font-sans font-semibold text-base px-8 py-3.5 rounded-full transition-all duration-200 hover:scale-105 focus:outline-none"
             style={{
               background: 'linear-gradient(135deg, oklch(0.78 0.16 78), oklch(0.62 0.16 68))',
               color: 'oklch(0.22 0.06 55)',
@@ -146,63 +134,58 @@ export default function Hero() {
           </button>
           <button
             onClick={scrollToContact}
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full font-sans font-semibold text-base transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 backdrop-blur-sm"
+            className="font-sans font-semibold text-base px-8 py-3.5 rounded-full border-2 transition-all duration-200 hover:scale-105 focus:outline-none backdrop-blur-sm"
             style={{
-              border: '2px solid oklch(0.97 0.02 90 / 0.65)',
-              color: 'oklch(0.98 0.02 90)',
-              backgroundColor: 'oklch(0.97 0.02 90 / 0.08)',
+              borderColor: 'oklch(0.88 0.04 90 / 0.65)',
+              color: 'oklch(0.97 0.02 90)',
+              backgroundColor: 'oklch(0.97 0.02 90 / 0.10)',
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLButtonElement).style.backgroundColor =
-                'oklch(0.97 0.02 90 / 0.18)';
+                'oklch(0.97 0.02 90 / 0.20)';
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLButtonElement).style.backgroundColor =
-                'oklch(0.97 0.02 90 / 0.08)';
+                'oklch(0.97 0.02 90 / 0.10)';
             }}
           >
-            Get in Touch
+            Get a Quote
           </button>
         </div>
 
         {/* Feature Pills */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {[
-            { icon: <Wheat className="w-4 h-4" />, label: 'Premium Dairy Feed' },
-            { icon: <Leaf className="w-4 h-4" />, label: 'Quality Agri Inputs' },
+            { icon: <Leaf className="w-4 h-4" />, label: 'Dairy Feed' },
+            { icon: <Wheat className="w-4 h-4" />, label: 'Agri Inputs' },
             { icon: <Coffee className="w-4 h-4" />, label: 'Coffee Trading' },
-          ].map((item) => (
+          ].map((pill) => (
             <div
-              key={item.label}
-              className="flex items-center gap-2 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-sans"
+              key={pill.label}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-sans font-medium backdrop-blur-sm"
               style={{
-                backgroundColor: 'oklch(0.97 0.02 90 / 0.12)',
-                border: '1px solid oklch(0.97 0.02 90 / 0.25)',
-                color: 'oklch(0.97 0.04 88)',
+                backgroundColor: 'oklch(0.22 0.06 55 / 0.45)',
+                border: '1px solid oklch(0.88 0.04 90 / 0.25)',
+                color: 'oklch(0.92 0.03 90)',
               }}
             >
-              {item.icon}
-              <span>{item.label}</span>
+              {pill.icon}
+              <span>{pill.label}</span>
             </div>
           ))}
         </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <button
-        onClick={scrollToProducts}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 transition-colors animate-bounce focus:outline-none"
-        style={{ color: 'oklch(0.97 0.02 90 / 0.55)' }}
-        onMouseEnter={(e) => {
-          (e.currentTarget as HTMLButtonElement).style.color = 'oklch(0.88 0.18 78)';
-        }}
-        onMouseLeave={(e) => {
-          (e.currentTarget as HTMLButtonElement).style.color = 'oklch(0.97 0.02 90 / 0.55)';
-        }}
-        aria-label="Scroll down"
-      >
-        <ArrowDown className="w-6 h-6" />
-      </button>
+        {/* Scroll indicator */}
+        <button
+          onClick={scrollToProducts}
+          className="inline-flex flex-col items-center gap-1 focus:outline-none group"
+          aria-label="Scroll down"
+          style={{ color: 'oklch(0.88 0.04 90 / 0.65)' }}
+        >
+          <span className="font-sans text-xs uppercase tracking-widest">Scroll</span>
+          <ArrowDown className="w-5 h-5 animate-bounce" />
+        </button>
+      </div>
     </section>
   );
 }

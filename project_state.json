@@ -5,18 +5,18 @@
   "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
-  "existing_features": [],
-  "new_feature_requests": [
+  "existing_features": [
     {
-      "id": "AR-1",
-      "summary": "Confirm and finalize the current build of the Adarshpatel Marketing site for live deployment, ensuring the enquiry contact form correctly submits data to the backend and opens a pre-filled WhatsApp chat to +91 8431628989 on successful submission.",
+      "id": "feature-update-the-hero-section-tagline-styling-to-a-more-refined-and-visually-distinct-look-change-the-font-to-a-bold-elegant-serif-style-and-adjust-the-text-color-to-a-warm-rich-golden-amber-shade-that-stands-out-clearly-against-the-hero-background-ensuring-the-result-feels-premium-and-professional",
+      "title": "Update the Hero section tagline styling to a more refined and visually distinct look: change the font to a bold, elegant serif style and adjust the text color to a warm, rich golden-amber shade that stands out clearly against the hero background — ensuring the result feels premium and professional.",
       "reqIds": [
         "REQ-1"
       ],
-      "status": "pending"
+      "version": 1
     }
   ],
-  "projectName": "Deploy current build live",
+  "new_feature_requests": [],
+  "projectName": "Adarshpatel Marketing",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }
